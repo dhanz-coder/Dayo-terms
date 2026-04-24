@@ -1,4 +1,4 @@
-# YourApp - Legal & Policy Hub | Project Summary
+# Dayo - Legal & Policy Hub | Project Summary
 
 ## 📋 Overview
 
@@ -6,33 +6,35 @@ A lightweight, responsive static website serving as the official legal and polic
 
 ## 🎯 Purpose
 
-- Host legal and policy documentation for mobile apps
+- Host legal and policy documentation for Dayo mobile app
 - Provide transparent information about user rights and responsibilities
 - Ensure GDPR/CCPA compliance with clear data policies
 - Easy deployment to static hosting platforms (GitHub Pages, Netlify, etc.)
 
 ## 📄 Pages & Content
 
-| Page | Purpose |
-|------|---------|
-| **Home** | Hub page with overview and links to all policies |
-| **Terms of Service** | Application usage rules and user obligations |
-| **Privacy Policy** | Data collection, usage, and user privacy rights |
-| **Community Guidelines** | Standards for respectful interaction and content |
-| **Refund Policy** | Refund eligibility, process, and timelines |
-| **Virtual Currency Policy** | Rules for in-app currency purchases and use |
-| **Payment Policy** | Payment methods, billing, and dispute resolution |
-| **Data Deletion** | Account removal and personal data deletion procedures |
+| Page                        | Purpose                                               |
+| --------------------------- | ----------------------------------------------------- |
+| **Home**                    | Hub page with overview and links to all policies      |
+| **Terms of Service**        | Application usage rules and user obligations          |
+| **Privacy Policy**          | Data collection, usage, and user privacy rights       |
+| **Community Guidelines**    | Standards for respectful interaction and content      |
+| **Refund Policy**           | Refund eligibility, process, and timelines            |
+| **Virtual Currency Policy** | Rules for in-app currency purchases and use           |
+| **Payment Policy**          | Payment methods, billing, and dispute resolution      |
+| **Data Deletion**           | Account removal and personal data deletion procedures |
 
 ## 🎨 Design & Technology
 
 **Tech Stack:**
+
 - Pure HTML5 (semantic)
 - CSS3 (responsive, no frameworks)
 - Vanilla JavaScript (mobile navigation only)
 - No dependencies or build tools
 
 **Design Features:**
+
 - **Responsive**: Mobile-first, works on all devices
 - **Theme**: Modern green color scheme (#10b981 primary)
 - **Performance**: Lightweight (~100KB total)
@@ -60,11 +62,13 @@ dayo-terms/
 ## 🚀 Deployment
 
 **Recommended: GitHub Pages**
+
 - Push to GitHub repository
 - Enable Pages in Settings → Source
-- Live automatically at `https://username.github.io/repo-name`
+- Live automatically at `https://username.github.io/dayo-terms`
 
 **Alternative Platforms:**
+
 - Netlify (drag & drop)
 - Vercel (connect GitHub)
 - Firebase Hosting
@@ -73,13 +77,15 @@ dayo-terms/
 
 ## 🔧 Customization
 
-**Essential Edits:**
-1. Replace `YourApp` with actual app name
-2. Update email addresses (support, privacy, billing, legal)
-3. Fill in placeholder sections with real policy content
-4. (Optional) Change green colors to match brand
+**Configuration:**
+
+1. App name: Dayo ✓
+2. Email: dayo.ph.it.services@gmail.com ✓
+3. Theme: Green ✓
+4. Ready for deployment
 
 **Color Palette:**
+
 - Primary Green: `#10b981`
 - Dark Green (hover): `#059669`
 - Dark Background: `#1a1a1a`
@@ -94,7 +100,7 @@ dayo-terms/
 ✅ **Accessible** - WCAG compliant navigation  
 ✅ **Professional Design** - Modern, clean interface  
 ✅ **Easy Maintenance** - Simple HTML/CSS structure  
-✅ **Mobile Navigation** - Hamburger menu on small screens  
+✅ **Mobile Navigation** - Hamburger menu on small screens
 
 ## 📊 Performance Metrics
 
@@ -153,24 +159,20 @@ All pages link back to Home and each other via navigation bar and footer.
 
 ## 📞 Default Contact Endpoints
 
-- General Support: `support@yourapp.com`
-- Privacy/GDPR: `privacy@yourapp.com`
-- Billing Issues: `billing@yourapp.com`
-- Legal Matters: `legal@yourapp.com`
-- Moderation: `moderation@yourapp.com`
-- Refunds: `refunds@yourapp.com`
-
-*(All customizable in HTML files)*
+- Primary Contact: `dayo.ph.it.services@gmail.com`
+- All departments route to this email
 
 ## 📈 Maintenance
 
 **Regular Updates:**
+
 - Review policies annually
 - Update "Last Updated" dates
 - Monitor contact response times
 - Test links across all pages
 
 **Seasonal:**
+
 - Update pricing in virtual currency section
 - Refresh copyright year
 - Add new policies as needed
@@ -178,6 +180,7 @@ All pages link back to Home and each other via navigation bar and footer.
 ## 🎓 Learning Value
 
 This project demonstrates:
+
 - Semantic HTML5 structure
 - Modern CSS3 responsive design
 - Vanilla JavaScript for interactivity
@@ -188,5 +191,8 @@ This project demonstrates:
 ---
 
 **Status**: ✅ Ready for Production  
+**App Name**: Dayo  
+**Email**: dayo.ph.it.services@gmail.com  
+**Theme**: Green  
 **Last Updated**: April 2024  
 **License**: Customizable for any use case

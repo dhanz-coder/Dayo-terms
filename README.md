@@ -1,4 +1,4 @@
-# YourApp - Legal & Policy Website
+# Dayo - Legal & Policy Website
 
 A lightweight, responsive static website for hosting legal and policy documents for a mobile application.
 
@@ -201,5 +201,7 @@ This template is provided as-is for legal documentation. Customize content accor
 ---
 
 **Ready to deploy!** No build process, no dependencies, no configuration needed. Just upload and go.
+
 #
+
 #
