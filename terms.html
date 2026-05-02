@@ -3,214 +3,3728 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Service – Dayo</title>
     <meta
       name="description"
-      content="Terms of Service for YourApp mobile application."
+      content="Dayo Terms of Service – sports networking platform, Philippines."
     />
-    <title>Terms of Service - Dayo</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --green: #7cc635;
+        --green-dim: rgba(124, 198, 53, 0.1);
+        --green-ring: rgba(124, 198, 53, 0.25);
+        --dark: #0a0a0a;
+        --surface: #111111;
+        --card: #161616;
+        --border: #222222;
+        --border-sub: #1a1a1a;
+        --text: #ebebeb;
+        --text-sub: #a0a0a0;
+        --text-dim: #6b6b6b;
+      }
+
+      /* Light theme */
+      body.light-theme {
+        --dark: #ffffff;
+        --surface: #f8f8f8;
+        --card: #f0f0f0;
+        --border: #e0e0e0;
+        --border-sub: #ececec;
+        --text: #1a1a1a;
+        --text-sub: #666666;
+        --text-dim: #999999;
+      }
+
+      body.light-theme header {
+        background: rgba(255, 255, 255, 0.88);
+      }
+
+      body.light-theme .content blockquote {
+        background: rgba(124, 198, 53, 0.06);
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+
+      body {
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        background: var(--dark);
+        color: var(--text);
+        line-height: 1.75;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ── Progress bar ── */
+      #progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 200;
+        height: 2px;
+        width: 0%;
+        background: linear-gradient(90deg, var(--green), #a8e05f);
+        transition: width 0.1s linear;
+        pointer-events: none;
+      }
+
+      /* ── Top bar ── */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(10, 10, 10, 0.88);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border-bottom: 1px solid var(--border);
+        padding: 0 32px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        justify-content: space-between;
+      }
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .header-logo {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        text-decoration: none;
+        flex-shrink: 0;
+      }
+      .header-logo img {
+        width: 52px;
+        height: 22px;
+        display: block;
+      }
+      .header-logo .logo-mark {
+        width: 32px;
+        height: 32px;
+        border-radius: 7px;
+        background: var(--green);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        font-weight: 900;
+        color: #000;
+        letter-spacing: -0.5px;
+        flex-shrink: 0;
+      }
+      .header-logo .logo-text {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--text);
+        letter-spacing: -0.3px;
+      }
+      .header-logo .logo-text span {
+        color: var(--green);
+      }
+      .header-divider {
+        width: 1px;
+        height: 18px;
+        background: var(--border);
+        flex-shrink: 0;
+      }
+      .header-label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--text-dim);
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        white-space: nowrap;
+      }
+      .header-right {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      #theme-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--text-sub);
+        font-size: 1.2rem;
+        padding: 6px 8px;
+        border-radius: 6px;
+        transition: all 0.15s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+      }
+      #theme-toggle:hover {
+        background: var(--card);
+        color: var(--text);
+      }
+      #menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--text-sub);
+        font-size: 1.4rem;
+        cursor: pointer;
+        padding: 0;
+        width: 32px;
+        height: 32px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+      }
+      #menu-toggle span {
+        width: 24px;
+        height: 2px;
+        background: var(--text-sub);
+        transition: all 0.3s;
+        border-radius: 1px;
+        display: block;
+      }
+      #menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(10px, 10px);
+      }
+      #menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+      #menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+      header nav {
+        margin-left: auto;
+        display: flex;
+        gap: 2px;
+      }
+      header nav a {
+        color: var(--text-sub);
+        text-decoration: none;
+        font-size: 0.81rem;
+        font-weight: 500;
+        padding: 6px 11px;
+        border-radius: 6px;
+        transition: all 0.15s;
+        white-space: nowrap;
+      }
+      header nav a:hover {
+        color: var(--text);
+        background: var(--card);
+      }
+      header nav a.active {
+        color: var(--green);
+        background: var(--green-dim);
+      }
+
+      /* ── Hero ── */
+      .hero {
+        border-bottom: 1px solid var(--border);
+        padding: 60px 32px 52px;
+      }
+      .hero-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        color: var(--green);
+        margin-bottom: 18px;
+      }
+      .hero-eyebrow::before {
+        content: "";
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--green);
+      }
+      .hero h1 {
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        font-weight: 800;
+        letter-spacing: -1px;
+        line-height: 1.15;
+        color: var(--text);
+        max-width: 680px;
+      }
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 22px;
+      }
+      .hero-meta-item {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 0.81rem;
+        color: var(--text-sub);
+      }
+      .hero-meta-item svg {
+        flex-shrink: 0;
+        opacity: 0.5;
+      }
+
+      /* ── Two-column layout ── */
+      .page-body {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 32px 100px;
+        display: grid;
+        grid-template-columns: 215px 1fr;
+        gap: 56px;
+        align-items: start;
+      }
+
+      /* ── Sidebar TOC ── */
+      .sidebar {
+        position: sticky;
+        top: 80px;
+        padding-top: 44px;
+      }
+      .toc-label {
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        color: var(--text-dim);
+        margin-bottom: 10px;
+      }
+      .toc-list {
+        list-style: none;
+      }
+      .toc-list a {
+        display: block;
+        color: var(--text-dim);
+        text-decoration: none;
+        font-size: 0.79rem;
+        font-weight: 500;
+        line-height: 1.45;
+        padding: 5px 0 5px 12px;
+        border-left: 1.5px solid var(--border);
+        transition: all 0.15s;
+      }
+      .toc-list a:hover {
+        color: var(--text-sub);
+        border-left-color: var(--text-dim);
+      }
+      .toc-list a.toc-active {
+        color: var(--green);
+        border-left-color: var(--green);
+        font-weight: 600;
+      }
+      .toc-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 0.77rem;
+        font-weight: 500;
+        color: var(--text-dim);
+        text-decoration: none;
+        margin-top: 22px;
+        padding: 5px 9px;
+        border-radius: 6px;
+        transition: all 0.15s;
+      }
+      .toc-back:hover {
+        color: var(--text);
+        background: var(--card);
+      }
+
+      /* ── Main content ── */
+      .content {
+        padding-top: 44px;
+        min-width: 0;
+      }
+      .content h1 {
+        display: none;
+      }
+
+      .content h2 {
+        font-size: 1.15rem;
+        font-weight: 700;
+        letter-spacing: -0.3px;
+        color: var(--text);
+        margin: 56px 0 14px;
+        scroll-margin-top: 80px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .content h2 .section-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 26px;
+        height: 20px;
+        font-size: 0.68rem;
+        font-weight: 700;
+        color: var(--green);
+        background: var(--green-dim);
+        border-radius: 4px;
+        padding: 0 6px;
+        letter-spacing: 0.3px;
+        flex-shrink: 0;
+      }
+      .content h3 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--text);
+        margin: 28px 0 10px;
+      }
+      .content h4 {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--text-sub);
+        margin: 20px 0 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.6px;
+      }
+      .content > *:first-child {
+        margin-top: 0 !important;
+      }
+      .content p {
+        margin-bottom: 14px;
+        color: var(--text-sub);
+        font-size: 0.91rem;
+      }
+      .content strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+      .content em {
+        color: var(--text-dim);
+      }
+      .content a {
+        color: var(--green);
+        text-decoration: none;
+      }
+      .content a:hover {
+        text-decoration: underline;
+      }
+      .content ul,
+      .content ol {
+        padding-left: 20px;
+        margin-bottom: 14px;
+      }
+      .content li {
+        margin-bottom: 7px;
+        color: var(--text-sub);
+        font-size: 0.91rem;
+      }
+      .content li::marker {
+        color: var(--green);
+      }
+
+      /* ── Tables ── */
+      .content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 0.83rem;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+      }
+      .content th {
+        background: var(--card);
+        color: var(--text-sub);
+        padding: 10px 14px;
+        text-align: left;
+        font-size: 0.73rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 1px solid var(--border);
+      }
+      .content td {
+        padding: 10px 14px;
+        border-top: 1px solid var(--border-sub);
+        color: var(--text-sub);
+      }
+      .content tr:hover td {
+        background: rgba(255, 255, 255, 0.015);
+      }
+
+      /* ── Blockquote ── */
+      .content blockquote {
+        border-left: 2px solid var(--green);
+        background: rgba(124, 198, 53, 0.04);
+        padding: 14px 18px;
+        border-radius: 0 8px 8px 0;
+        margin: 18px 0;
+      }
+      .content blockquote p {
+        color: var(--text-sub);
+        margin: 0;
+      }
+      .content hr {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 32px 0;
+      }
+
+      /* ── Footer ── */
+      footer {
+        border-top: 1px solid var(--border);
+        background: var(--surface);
+      }
+      .footer-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 40px 32px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+      .footer-brand .logo-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+      .footer-brand .logo-mark {
+        width: 22px;
+        height: 22px;
+        border-radius: 5px;
+        background: var(--green);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.65rem;
+        font-weight: 900;
+        color: #000;
+      }
+      .footer-brand .brand-name {
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: var(--text);
+      }
+      .footer-brand p {
+        font-size: 0.77rem;
+        color: var(--text-dim);
+        line-height: 1.55;
+        max-width: 220px;
+      }
+      .footer-nav {
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+      .footer-col h4 {
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--text-dim);
+        margin-bottom: 12px;
+      }
+      .footer-col ul {
+        list-style: none;
+      }
+      .footer-col li {
+        margin-bottom: 8px;
+      }
+      .footer-col a {
+        font-size: 0.81rem;
+        color: var(--text-sub);
+        text-decoration: none;
+        transition: color 0.15s;
+      }
+      .footer-col a:hover {
+        color: var(--green);
+      }
+      .footer-bottom {
+        border-top: 1px solid var(--border);
+        padding: 16px 32px;
+        text-align: center;
+        font-size: 0.73rem;
+        color: var(--text-dim);
+      }
+
+      /* ── Index page ── */
+      .index-body {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 60px 32px 100px;
+      }
+      .index-intro {
+        text-align: center;
+        max-width: 520px;
+        margin: 0 auto 44px;
+      }
+      .index-intro p {
+        font-size: 0.9rem;
+        color: var(--text-sub);
+        line-height: 1.65;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 14px;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 26px 22px;
+        text-decoration: none;
+        color: var(--text);
+        transition:
+          border-color 0.2s,
+          transform 0.2s;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        position: relative;
+        overflow: hidden;
+      }
+      .card::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--green-ring),
+          transparent
+        );
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .card:hover {
+        border-color: rgba(124, 198, 53, 0.35);
+        transform: translateY(-2px);
+      }
+      .card:hover::after {
+        opacity: 1;
+      }
+      .card-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 9px;
+        background: var(--green-dim);
+        border: 1px solid var(--green-ring);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 4px;
+        color: var(--green);
+      }
+      .card-title {
+        font-size: 0.97rem;
+        font-weight: 700;
+        color: var(--text);
+      }
+      .card-desc {
+        font-size: 0.81rem;
+        color: var(--text-sub);
+        line-height: 1.55;
+        flex: 1;
+      }
+      .card-link {
+        font-size: 0.79rem;
+        color: var(--green);
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin-top: 6px;
+      }
+      .info-box {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 22px 26px;
+        margin-top: 32px;
+      }
+      .info-box h3 {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        color: var(--text-dim);
+        margin-bottom: 10px;
+      }
+      .info-box p {
+        font-size: 0.86rem;
+        color: var(--text-sub);
+        margin-bottom: 5px;
+      }
+      .info-box a {
+        color: var(--green);
+        text-decoration: none;
+      }
+      .info-box a:hover {
+        text-decoration: underline;
+      }
+
+      /* ── Print ── */
+      @media print {
+        #progress,
+        header,
+        .sidebar,
+        .toc-back,
+        footer {
+          display: none !important;
+        }
+        .page-body {
+          display: block;
+          padding: 0;
+        }
+        .content {
+          padding: 0;
+        }
+        body {
+          background: #fff;
+          color: #000;
+        }
+        .content h2 {
+          color: #000;
+        }
+        .content p,
+        .content li {
+          color: #333;
+        }
+        .section-num {
+          background: #eee !important;
+          color: #000 !important;
+        }
+      }
+
+      /* ── Responsive ── */
+      @media (max-width: 860px) {
+        .page-body {
+          grid-template-columns: 1fr;
+          gap: 0;
+          padding: 0 20px 80px;
+        }
+        .sidebar {
+          display: none;
+        }
+        .hero,
+        .index-body {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+        .footer-inner,
+        .footer-bottom {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+        header {
+          padding: 0 16px;
+          gap: 12px;
+        }
+        .header-left {
+          gap: 12px;
+        }
+        .header-label {
+          display: none;
+        }
+        .header-divider {
+          display: none;
+        }
+        header nav {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 60px;
+          left: 0;
+          right: 0;
+          background: var(--surface);
+          border-bottom: 1px solid var(--border);
+          padding: 12px 16px;
+          gap: 0;
+          z-index: 99;
+        }
+        header nav.active {
+          display: flex;
+        }
+        header nav a {
+          display: block;
+          padding: 10px 8px;
+          width: 100%;
+        }
+        #menu-toggle {
+          display: flex;
+        }
+        .header-logo .logo-text {
+          display: none;
+        }
+        .header-logo img {
+          width: 28px;
+          height: 28px;
+        }
+        .header-logo .logo-mark {
+          width: 28px;
+          height: 28px;
+        }
+      }
+      @media (max-width: 540px) {
+        header nav a {
+          font-size: 0.74rem;
+          padding: 5px 8px;
+        }
+        .cards {
+          grid-template-columns: 1fr;
+        }
+        #theme-toggle {
+          width: 32px;
+          height: 32px;
+        }
+        header {
+          padding: 0 12px;
+        }
+      }
+    </style>
   </head>
   <body>
-    <!-- Header & Navigation -->
+    <div id="progress"></div>
     <header>
-      <div class="header-container">
-        <div class="logo">
-          <a href="index.html">YourApp</a>
-        </div>
-        <button class="menu-toggle" id="menuToggle">☰</button>
-        <nav id="navMenu">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="terms.html" class="active">Terms</a></li>
-            <li><a href="privacy.html">Privacy</a></li>
-            <li><a href="community-guidelines.html">Community</a></li>
-            <li><a href="refund-policy.html">Refund</a></li>
-            <li><a href="virtual-currency-policy.html">Currency</a></li>
-            <li><a href="payment-policy.html">Payment</a></li>
-            <li><a href="data-deletion.html">Data Deletion</a></li>
-          </ul>
-        </nav>
+      <div class="header-left">
+        <a href="index.html" class="header-logo">
+          <img src="assets/LogoBig.png" alt="Dayo Logo" />
+          <span class="logo-text">Dayo</span>
+        </a>
+        <div class="header-divider"></div>
+        <span class="header-label">Legal</span>
       </div>
+      <div class="header-right">
+        <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+        <button id="menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <nav>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html" class="active">Terms of Service</a>
+        <a href="guidelines.html">Community Guidelines</a>
+      </nav>
     </header>
 
-    <!-- Main Content -->
-    <main>
-      <div class="main-container">
-        <h1 class="page-title">Terms of Service</h1>
-        <p class="page-subtitle">
-          Last updated: April 2024 | Effective Date: April 2024
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-eyebrow">Legal Document</div>
+        <h1>Terms of Service</h1>
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" /></svg
+            >&nbsp;Effective April 26, 2026
+          </div>
+          <div class="hero-meta-item">
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path
+                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+              /></svg
+            >&nbsp;Republic of the Philippines
+          </div>
+          <div class="hero-meta-item">
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path
+                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+              /></svg
+            >&nbsp;Dayo, Inc.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-body">
+      <aside class="sidebar">
+        <div class="toc-label">On this page</div>
+        <ul class="toc-list">
+          <li>
+            <a href="#section-1" class="toc-link"
+              >1. Introduction and Acceptance</a
+            >
+          </li>
+          <li>
+            <a href="#section-2" class="toc-link"
+              >2. Eligibility & Eligibility Requirements</a
+            >
+          </li>
+          <li>
+            <a href="#section-3" class="toc-link"
+              >3. Account Registration and Security</a
+            >
+          </li>
+          <li>
+            <a href="#section-4" class="toc-link"
+              >4. Permitted Use and License</a
+            >
+          </li>
+          <li>
+            <a href="#section-5" class="toc-link">5. User Content and Rights</a>
+          </li>
+          <li>
+            <a href="#section-6" class="toc-link"
+              >6. Virtual Currency & In-App Purchases</a
+            >
+          </li>
+          <li>
+            <a href="#section-7" class="toc-link"
+              >7. Third-Party Links and Services</a
+            >
+          </li>
+          <li>
+            <a href="#section-8" class="toc-link">8. Limitation of Liability</a>
+          </li>
+          <li>
+            <a href="#section-9" class="toc-link"
+              >9. Termination and Account Suspension</a
+            >
+          </li>
+          <li>
+            <a href="#section-10" class="toc-link"
+              >10. Modifications to Service and Terms</a
+            >
+          </li>
+          <li>
+            <a href="#section-11" class="toc-link"
+              >11. Indemnification and Your Legal Responsibility
+            </a>
+          </li>
+          <li>
+            <a href="#section-12" class="toc-link"
+              >12. Dispute Resolution and Governing Law</a
+            >
+          </li>
+          <li>
+            <a href="#section-13" class="toc-link"
+              >13. Privacy and Data Protection
+            </a>
+          </li>
+          <li>
+            <a href="#section-14" class="toc-link"
+              >14. Contact, Support and Legal Notice</a
+            >
+          </li>
+          <li>
+            <a href="#section-15" class="toc-link"
+              >15. Intellectual Property and Dayo's Rights</a
+            >
+          </li>
+          <li>
+            <a href="#section-16" class="toc-link"
+              >16. Final Provisions and Miscellaneous
+            </a>
+          </li>
+          <li>
+            <a href="#section-17" class="toc-link"
+              >17. Acknowledgment of Terms</a
+            >
+          </li>
+        </ul>
+        <a href="index.html" class="toc-back"
+          ><svg
+            width="11"
+            height="11"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="15 18 9 12 15 6" /></svg
+          >&nbsp;All documents</a
+        >
+      </aside>
+
+      <main class="content">
+        <h1>Terms of Service</h1>
+        <p>
+          <strong>Dayo, Inc.</strong><br />Effective Date: April 26, 2026<br />Last
+          Updated: April 26, 2026<br />Governing Law: Republic of the
+          Philippines<br />Jurisdiction: Butuan City, Agusan Del Norte,
+          Philippines
+        </p>
+        <hr />
+        <h2 id="section-1">
+          <span class="section-num">01</span>1. Introduction and Acceptance
+        </h2>
+        <p>
+          These Terms of Service (&quot;Terms&quot;) constitute a legally
+          binding agreement between you (&quot;User,&quot; &quot;Player,&quot;
+          or &quot;Member&quot;) and Dayo, Inc. (&quot;Dayo,&quot;
+          &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;), governing your
+          access to and use of the Dayo mobile application and all related
+          services (the &quot;Service&quot;).
+        </p>
+        <p>
+          By creating an account or using the Service in any way, you confirm
+          that you have read, understood, and agree to be bound by these Terms
+          and our Privacy Policy. If you do not agree, you must not use the
+          Service. If you are under 18 years of age, you represent that your
+          parent or legal guardian has reviewed and agreed to these Terms on
+          your behalf.
+        </p>
+        <h3>1.2 What These Terms Cover</h3>
+        <p><strong>These Terms apply to:</strong></p>
+        <ul>
+          <li>✅ Your use of the Dayo mobile app (iOS and Android)</li>
+          <li>✅ Your use of the Dayo website (if applicable)</li>
+          <li>✅ Your profile and account</li>
+          <li>✅ Your participation in matches and events</li>
+          <li>✅ Your purchases (coins, premium features)</li>
+          <li>✅ Your communications with other users</li>
+          <li>✅ Your data and content</li>
+        </ul>
+        <p>
+          <strong>In Plain Language:</strong><br />
+          Every time you open the Dayo app, use your profile, join a match,
+          message someone, or buy coins, these Terms apply to what you're doing.
+          If you use any part of Dayo, you're agreeing to follow these Terms.
+        </p>
+        <h3>1.3 Other Important Documents</h3>
+        <p>
+          <strong
+            >These Terms work together with these other documents. If there's a
+            conflict, they apply in this order (most important first):</strong
+          >
+        </p>
+        <ol>
+          <li>
+            <strong>Applicable Laws</strong> (Philippine law, cybercrime laws,
+            etc.)
+          </li>
+          <li>
+            <strong>Community Guidelines</strong> (behavior and content rules)
+          </li>
+          <li><strong>Privacy Policy</strong> (how we handle your data)</li>
+          <li><strong>These Terms of Service</strong> (legal agreement)</li>
+        </ol>
+        <p>
+          <strong>In Plain Language:</strong><br />
+          Think of it like this: Philippine law is like the government's rules.
+          Community Guidelines are like the club's rules. Privacy Policy is
+          about your information. These Terms are the legal contract. All of
+          them apply to you when you use Dayo.
+        </p>
+        <h3>1.4 Acceptance of Terms</h3>
+        <p><strong>By using Dayo, you:</strong></p>
+        <ul>
+          <li>✅ Confirm you've read these Terms</li>
+          <li>✅ Understand the Terms</li>
+          <li>✅ Accept all terms and conditions</li>
+          <li>✅ Agree to follow all rules</li>
+          <li>✅ Accept all consequences if you violate</li>
+          <li>✅ Agree that violations may result in ban</li>
+          <li>✅ Agree to binding arbitration (Section 16)</li>
+        </ul>
+        <p><strong>If you don't agree:</strong></p>
+        <ul>
+          <li>❌ Don't create an account</li>
+          <li>❌ Delete your account immediately</li>
+          <li>❌ Stop using the app</li>
+        </ul>
+        <p>
+          <strong>In Plain Language:</strong><br />
+          By creating an account and using Dayo, you automatically agree to
+          these Terms of Service. If you do not agree with any part of these
+          Terms, you should not create or continue using a Dayo account. If you
+          have already created an account and no longer agree to the Terms, you
+          may delete your account at any time through the app settings.
+        </p>
+        <hr />
+        <h2 id="section-2">
+          <span class="section-num">02</span>2. Eligibility & Eligibility
+          Requirements
+        </h2>
+        <h3>2.1 Age Requirements</h3>
+        <p><strong>You must be:</strong></p>
+        <ul>
+          <li>✅ At least 13 years old to use Dayo</li>
+          <li>
+            ✅ Old enough to enter into contracts in your country/jurisdiction
+          </li>
+          <li>✅ Not legally prohibited from using Dayo</li>
+        </ul>
+        <p>
+          <strong>Age Verification:</strong><br />
+          During registration, you confirm your age by entering your birthdate.
+          If you claim to be 13+ but are actually younger, your account will be
+          deleted.
+        </p>
+        <p>
+          <strong>Parental Consent for Minors (Ages 13-17):</strong><br />
+          If you're 13-17 years old, you should ask your parent or guardian for
+          permission before using Dayo. Parents/guardians can enable parental
+          controls.
+        </p>
+        <p>
+          <strong>In Plain Language:</strong><br />
+          Dayo is designed for ages 13 and up. If you're younger than 13, you
+          can't use it. If you're 13-17, it's a good idea to ask your parents
+          before joining. If we find out you're under 13, we'll delete your
+          account.
+        </p>
+        <hr />
+        <h3>2.2 Legal Restrictions</h3>
+        <p><strong>You cannot use Dayo if:</strong></p>
+        <ul>
+          <li>❌ You're under 13 years old</li>
+          <li>❌ You've been permanently banned from Dayo</li>
+          <li>❌ You're prohibited by law from using online services</li>
+          <li>❌ You're on sanctions lists (OFAC, etc.)</li>
+          <li>❌ You're a registered sex offender (Section 2.3)</li>
+          <li>❌ You have a restraining order from other Dayo users</li>
+          <li>❌ You're under court order prohibiting online activity</li>
+        </ul>
+        <p>
+          <strong>In Plain Language:</strong><br />
+          There are certain situations where we legally cannot let you use Dayo.
+          For example, if you've been permanently banned, or if a court says you
+          can't use the internet, we can't let you use Dayo.
+        </p>
+        <hr />
+        <h3>2.3 Sex Offender Registration Requirement</h3>
+        <p><strong>If you are a registered sex offender:</strong></p>
+        <p>
+          By using Dayo, you certify that you are NOT a registered sex offender
+          in the Philippines or any other jurisdiction. If you are:
+        </p>
+        <ul>
+          <li>⚠️ You may be violating laws by accessing Dayo</li>
+          <li>⚠️ You may be subject to prosecution</li>
+          <li>⚠️ You may have violated terms of probation/parole</li>
+          <li>⚠️ Dayo will ban your account if discovered</li>
+        </ul>
+        <p>
+          <strong>In Plain Language:</strong><br />
+          If you're required by law to register as a sex offender, you should
+          not use Dayo. Doing so may be illegal, and we will ban you if we find
+          out. This is to protect young users on our platform.
+        </p>
+        <hr />
+        <h3>2.4 Territory Restrictions</h3>
+        <p><strong>Dayo is available in:</strong></p>
+        <ul>
+          <li>✅ Philippines (primary market)</li>
+          <li>✅ Selected countries (check website for current list)</li>
+        </ul>
+        <p><strong>Restrictions:</strong></p>
+        <ul>
+          <li>
+            If you're in a restricted territory, you may not be able to use Dayo
+          </li>
+          <li>
+            If you move to a restricted territory, your account may be suspended
+          </li>
+          <li>Payment may not be available in all territories</li>
+        </ul>
+        <p>
+          <strong>In Plain Language:</strong><br />
+          Dayo is available in the Philippines and some other countries. If
+          you're in a country where Dayo doesn't operate, you may not be able to
+          access certain features or make payments.
+        </p>
+        <hr />
+        <h2 id="section-3">
+          <span class="section-num">03</span>3. Account Registration and
+          Security
+        </h2>
+        <p>
+          To access most features of the Service, you must register for an
+          account. You agree to provide accurate, current, and complete
+          information during registration and to keep your account information
+          up to date. You are responsible for maintaining the confidentiality of
+          your account credentials and for all activity that occurs under your
+          account.
+        </p>
+        <p>
+          You must notify us immediately at
+          <a href="mailto:dayo.ph.it.services@gmail.com"
+            >dayo.ph.it.services@gmail.com</a
+          >
+          if you discover or suspect any unauthorized use of your account or any
+          other security breach. We will not be liable for any loss or damage
+          arising from your failure to protect your account credentials.
+        </p>
+        <p>
+          You may only maintain one account unless we expressly authorize
+          otherwise. Creating multiple accounts to evade a ban or other
+          enforcement action is prohibited.
+        </p>
+        <h3>3.1 Account Registration</h3>
+
+        <p><strong>Creating an Account:</strong></p>
+        <p>To use Dayo, you must:</p>
+        <ul>
+          <li>✅ Provide accurate, current information</li>
+          <li>✅ Verify your email address</li>
+          <li>✅ Create a secure password</li>
+          <li>✅ Confirm your age (must be 13+)</li>
+          <li>✅ Accept these Terms and Community Guidelines</li>
+        </ul>
+
+        <p><strong>Information You Provide:</strong></p>
+        <ul>
+          <li>Email address (must be valid and monitored by you)</li>
+          <li>
+            Name (first and/or last, must be real or your chosen username)
+          </li>
+          <li>Phone number (optional but recommended)</li>
+          <li>Profile photo (optional)</li>
+          <li>Bio/description (optional)</li>
+          <li>Birth date (required for age verification)</li>
+          <li>Location (for matching purposes)</li>
+        </ul>
+
+        <p><strong>Accuracy is Required:</strong></p>
+        <p>You confirm that all information you provide is:</p>
+        <ul>
+          <li>✅ True and accurate</li>
+          <li>✅ Not misleading</li>
+          <li>✅ Not obtained fraudulently</li>
+          <li>✅ Your own information (not someone else's)</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          When you sign up for Dayo, you need to provide real information. Don't
+          make up a fake identity or use someone else's info. We need this
+          information to verify your age and to connect you with other players.
+          If you lie during signup, we can ban your account.
         </p>
 
-        <section>
-          <h2>1. Introduction</h2>
-          <p>
-            Welcome to YourApp. These Terms of Service ("Terms") govern your
-            access to and use of the YourApp mobile application and related
-            services. By downloading, installing, or using YourApp, you agree to
-            be bound by these Terms.
-          </p>
-          <div class="placeholder">
-            [This section will outline the basic agreement between the user and
-            YourApp regarding service usage]
-          </div>
-        </section>
+        <h3>3.2 Account Password &amp; Security</h3>
 
-        <section>
-          <h2>2. Scope & Applicability</h2>
-          <p>
-            These Terms apply to all users of the YourApp platform, including
-            but not limited to:
-          </p>
-          <ul>
-            <li>Mobile application users</li>
-            <li>Web platform users</li>
-            <li>API consumers</li>
-            <li>Third-party integrations</li>
-          </ul>
-          <div class="placeholder">
-            [This section will clarify the geographic, technical, and user scope
-            of these terms]
-          </div>
-        </section>
+        <p><strong>Your Password:</strong></p>
+        <ul>
+          <li>✅ Is your responsibility to keep secure</li>
+          <li>
+            ✅ Must be at least 8 characters long (recommended: mix of letters,
+            numbers, symbols)
+          </li>
+          <li>✅ Should not be shared with anyone</li>
+          <li>✅ Should be unique (don't use it on other websites)</li>
+          <li>✅ Should be changed regularly (every 3-6 months)</li>
+        </ul>
 
-        <section>
-          <h2>3. User Responsibilities</h2>
-          <p>As a user of Dayo, you agree to:</p>
-          <ul>
-            <li>Comply with all applicable laws and regulations</li>
-            <li>
-              Provide accurate and complete information during registration
-            </li>
-            <li>Maintain the confidentiality of your account credentials</li>
-            <li>
-              Notify us immediately of any unauthorized access to your account
-            </li>
-            <li>Not engage in harmful, illegal, or abusive activities</li>
-          </ul>
-          <div class="placeholder">
-            [This section will detail user obligations and expected behavior on
-            the platform]
-          </div>
-        </section>
+        <p><strong>Your Responsibility:</strong></p>
+        <p>You are responsible for:</p>
+        <ul>
+          <li>✅ All activity on your account</li>
+          <li>✅ Keeping your password confidential</li>
+          <li>✅ Protecting your phone/device</li>
+          <li>✅ Logging out when done</li>
+          <li>✅ Reporting unauthorized access immediately</li>
+          <li>✅ Consequences of your password being compromised</li>
+        </ul>
 
-        <section>
-          <h2>4. Acceptable Use Policy</h2>
-          <p>You agree not to use Dayo for any of the following purposes:</p>
-          <ul>
-            <li>Harassing, threatening, or abusing other users</li>
-            <li>Transmitting malware or harmful code</li>
-            <li>Attempting to gain unauthorized access to systems</li>
-            <li>Violating intellectual property rights</li>
-            <li>Distributing illegal content</li>
-          </ul>
-          <div class="placeholder">
-            [This section will provide detailed guidelines on prohibited conduct
-            and activities]
-          </div>
-        </section>
+        <p><strong>Dayo is NOT Responsible For:</strong></p>
+        <ul>
+          <li>❌ If you share your password (even with friends)</li>
+          <li>❌ If you use a weak password that's hacked</li>
+          <li>❌ If someone steals your phone</li>
+          <li>❌ If you fall for a phishing email</li>
+          <li>❌ Any unauthorized activity if it's "your fault"</li>
+        </ul>
 
-        <section>
-          <h2>5. Limitation of Liability</h2>
-          <p>
-            YourApp is provided "as is" without warranties of any kind. To the
-            maximum extent permitted by law, YourApp shall not be liable for any
-            indirect, incidental, special, consequential, or punitive damages.
-          </p>
-          <div class="placeholder">
-            [This section will outline legal protections for YourApp regarding
-            damages and claims]
-          </div>
-        </section>
+        <p>
+          <strong>In Plain Language:</strong><br />
+          Your password is like your house key. Don't give it to anyone. Don't
+          use a password that's easy to guess. If someone else accesses your
+          account and makes charges or sends messages, that's on you unless they
+          hacked Dayo's security (not just guessed your password). If you think
+          your account is compromised, change your password immediately and tell
+          us.
+        </p>
 
-        <section>
-          <h2>6. Termination</h2>
-          <p>
-            YourApp may suspend or terminate your account at any time for
-            violations of these Terms or for any other reason at our sole
-            discretion.
-          </p>
-          <div class="placeholder">
-            [This section will explain account termination procedures and appeal
-            processes]
-          </div>
-        </section>
+        <h3>3.3 Two-Factor Authentication (2FA)</h3>
 
-        <section>
-          <h2>7. Changes to Terms</h2>
-          <p>
-            We reserve the right to modify these Terms at any time. Continued
-            use of YourApp following any changes constitutes your acceptance of
-            the new Terms.
-          </p>
-          <div class="placeholder">
-            [This section will detail how updates to these terms will be
-            communicated to users]
-          </div>
-        </section>
+        <p><strong>Two-Factor Authentication:</strong></p>
+        <ul>
+          <li>✅ Optional but highly recommended</li>
+          <li>✅ Adds extra security layer</li>
+          <li>✅ Requires password + phone verification</li>
+          <li>✅ Can be enabled in Settings &gt; Security</li>
+        </ul>
 
-        <section>
-          <h2>8. Contact Information</h2>
-          <p>If you have questions about these Terms, please contact us at:</p>
-          <p>
-            <strong>Email:</strong> legal@yourapp.com<br />
-            <strong>Mailing Address:</strong> [Company Address]<br />
-            <strong>Response Time:</strong> 5-7 business days
-          </p>
-        </section>
-      </div>
-    </main>
+        <p><strong>How 2FA Works:</strong></p>
+        <ol>
+          <li>You enable 2FA in Settings</li>
+          <li>We send a code to your phone</li>
+          <li>You enter the code to verify it's you</li>
+          <li>Next time someone tries to log in, they need the code</li>
+          <li>
+            Even if they have your password, they can't log in without the code
+          </li>
+        </ol>
 
-    <!-- Footer -->
+        <p>
+          <strong>In Plain Language:</strong><br />
+          2FA is like a security guard at your door. Even if someone has your
+          key (password), the guard (2FA) asks a second question to make sure
+          it's really you. This makes your account much safer.
+        </p>
+
+        <h3>3.4 Account Deletion</h3>
+
+        <p><strong>You Can Delete Your Account Anytime:</strong></p>
+        <ol>
+          <li>Go to Settings</li>
+          <li>Select "Account"</li>
+          <li>Select "Delete Account"</li>
+          <li>Confirm deletion</li>
+          <li>Account deleted within 24 hours</li>
+        </ol>
+
+        <p><strong>What Happens When You Delete:</strong></p>
+        <ul>
+          <li>❌ Account permanently deleted</li>
+          <li>❌ All content deleted (or anonymized)</li>
+          <li>❌ All data deleted (or anonymized)</li>
+          <li>❌ Match history deleted</li>
+          <li>❌ Coins forfeited (no refund)</li>
+          <li>✅ You can request data export first (if available)</li>
+        </ul>
+
+        <p><strong>Reactivation:</strong></p>
+        <ul>
+          <li>❌ Cannot reactivate account</li>
+          <li>✅ Can create new account after 30-day waiting period</li>
+          <li>✅ New account is completely separate</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          You can delete your account anytime. We'll delete all your data. You
+          lose your coins. You can create a new account later, but it won't have
+          your old data.
+        </p>
+
+        <hr />
+        <hr />
+        <h2 id="section-4">
+          <span class="section-num">04</span>4. Permitted Use and License
+        </h2>
+        <p>
+          Subject to your compliance with these Terms, we grant you a limited,
+          personal, non-exclusive, non-transferable, revocable license to access
+          and use the Service for your personal, non-commercial purposes �
+          including organizing and participating in sports matches, joining
+          clubs, connecting with other athletes, and purchasing in-app items.
+        </p>
+        <p>
+          You may not use the Service for any unlawful purpose or in any manner
+          that could damage, disable, overburden, or impair the Service or
+          interfere with any other user&#39;s ability to enjoy it.
+        </p>
+        <h3>4.1 Limited License Grant</h3>
+
+        <p>
+          <strong
+            >Dayo grants you a limited, non-exclusive, non-transferable license
+            to:</strong
+          >
+        </p>
+        <ul>
+          <li>
+            ✅ Download and install the Dayo app on your personal device(s)
+          </li>
+          <li>✅ Use the app for personal, non-commercial purposes</li>
+          <li>✅ Create one user account (multiple accounts prohibited)</li>
+          <li>✅ Access and view content</li>
+          <li>✅ Participate in matches and events</li>
+          <li>✅ Communicate with other users</li>
+          <li>✅ Post content (photos, text, etc.)</li>
+          <li>✅ Purchase virtual currency and items</li>
+        </ul>
+
+        <p>
+          <strong>This means:</strong><br />
+          You have permission to use Dayo as long as you follow the rules. This
+          permission is just for you—you can't transfer it to someone else, and
+          you can't use it for business.
+        </p>
+
+        <p><strong>What You DON'T Own:</strong></p>
+        <ul>
+          <li>❌ The app itself (we own it)</li>
+          <li>❌ Dayo's features or technology</li>
+          <li>❌ Dayo's name, logo, or brand</li>
+          <li>❌ Anyone else's content or data</li>
+        </ul>
+
+        <h3>4.2 Permitted Use</h3>
+
+        <p><strong>You CAN:</strong></p>
+        <ul>
+          <li>✅ Use the app for personal sports activity</li>
+          <li>✅ Create a profile with your information</li>
+          <li>✅ Post photos, videos, and text content</li>
+          <li>✅ Comment on other users' content</li>
+          <li>✅ Message other users</li>
+          <li>✅ Join matches and events</li>
+          <li>✅ Participate in clubs and communities</li>
+          <li>✅ Purchase coins and features</li>
+          <li>✅ Rate and review matches/players</li>
+          <li>✅ Download your data (upon request)</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          You can do most normal things on Dayo. You can join matches, talk to
+          people, post photos, buy coins, etc. As long as you follow the
+          Community Guidelines, you're fine.
+        </p>
+
+        <h3>4.3 Prohibited Use</h3>
+
+        <p><strong>You CANNOT:</strong></p>
+        <ul>
+          <li>❌ Use the app for illegal purposes</li>
+          <li>❌ Use the app for commercial purposes (without permission)</li>
+          <li>❌ Create multiple accounts (ban evasion)</li>
+          <li>❌ Use bots or automation</li>
+          <li>❌ Hack or attempt unauthorized access</li>
+          <li>❌ Copy or scrape user data</li>
+          <li>❌ Modify or reverse-engineer the app</li>
+          <li>❌ Share your account with others</li>
+          <li>❌ Impersonate someone else</li>
+          <li>❌ Harass, threaten, or abuse other users</li>
+          <li>❌ Post illegal content</li>
+          <li>❌ Spam or mass-message users</li>
+          <li>❌ Circumvent security features</li>
+          <li>❌ Use VPN to bypass restrictions</li>
+          <li>❌ Exploit app bugs or glitches</li>
+          <li>❌ Run automated scripts or tools</li>
+          <li>❌ Use the app while under court order</li>
+          <li>❌ Violate anyone's intellectual property</li>
+          <li>❌ Use Dayo for illegal gambling</li>
+          <li>❌ Use Dayo to traffic in counterfeit goods</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          Don't do illegal stuff. Don't try to hack us. Don't harass people.
+          Don't spam. Don't try to be someone you're not. Don't try to rip off
+          other users' data or content. If you do any of these things, we can
+          ban you.
+        </p>
+
+        <h3>4.4 Restrictions on Device &amp; Software</h3>
+
+        <p><strong>Device Restrictions:</strong></p>
+        <ul>
+          <li>✅ Install on devices you own or control</li>
+          <li>❌ Don't install on devices without permission</li>
+          <li>❌ Don't modify app files or code</li>
+          <li>❌ Don't jailbreak/root device to modify Dayo</li>
+          <li>❌ Don't use modded/hacked versions of the app</li>
+        </ul>
+
+        <p><strong>Software Restrictions:</strong></p>
+        <ul>
+          <li>✅ Keep app updated to latest version (recommended)</li>
+          <li>✅ Use official app from Google Play or Apple App Store</li>
+          <li>❌ Don't use side-loaded or unofficial versions</li>
+          <li>❌ Don't use app with unauthorized mods</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          Download Dayo from the official app store (Google Play or Apple App
+          Store). Don't try to modify the app code or use hacked versions. If
+          you try, your account will be banned.
+        </p>
+
+        <hr />
+        <hr />
+        <h2 id="section-5">
+          <span class="section-num">05</span>5. User Content and Intellectual
+          Property Rights
+        </h2>
+        <p>
+          The Service allows you to post, upload, and share content such as
+          profile photos, match results, club posts, comments, and messages
+          (collectively, &quot;User Content&quot;). You retain ownership of your
+          User Content. By submitting User Content to the Service, you grant
+          Dayo a worldwide, royalty-free, non-exclusive license to use, display,
+          reproduce, and distribute your User Content within the Service for the
+          purpose of operating and improving the platform.
+        </p>
+        <p>
+          You are solely responsible for your User Content. You represent and
+          warrant that your User Content does not violate any third-party
+          rights, including intellectual property rights and privacy rights, and
+          that it complies with these Terms and our Community Guidelines. We
+          reserve the right to remove any User Content that violates these Terms
+          without prior notice.
+        </p>
+        <h3>5.1 Your Content Ownership</h3>
+
+        <p><strong>Content You Create:</strong></p>
+        <p>
+          You retain ownership of content you create and post on Dayo,
+          including:
+        </p>
+        <ul>
+          <li>✅ Photos and videos you upload</li>
+          <li>✅ Text posts and comments</li>
+          <li>✅ Bio/profile information</li>
+          <li>✅ Match commentary and reviews</li>
+          <li>✅ Messages and private conversations</li>
+        </ul>
+
+        <p><strong>What This Means:</strong></p>
+        <ul>
+          <li>You own the content you post</li>
+          <li>You can delete it anytime</li>
+          <li>You can request data export</li>
+          <li>You can request content removal</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          When you post a photo or write something on Dayo, you own it. We don't
+          own your photos or your words. You can delete them whenever you want.
+        </p>
+
+        <h3>5.2 License You Grant to Dayo</h3>
+
+        <p><strong>By posting content, you grant Dayo the right to:</strong></p>
+        <ul>
+          <li>✅ Display your content in the app</li>
+          <li>✅ Store your content on our servers</li>
+          <li>✅ Make copies for backup/technical purposes</li>
+          <li>✅ Moderate and review content</li>
+          <li>✅ Remove content if it violates terms</li>
+          <li>
+            ✅ Share limited metadata with other users (who viewed your profile,
+            who matched with you, etc.)
+          </li>
+          <li>✅ Analyze content for safety/spam detection</li>
+        </ul>
+
+        <p><strong>What We DON'T Do Without Permission:</strong></p>
+        <ul>
+          <li>❌ Sell your photos or personal content</li>
+          <li>❌ Share your data with advertisers</li>
+          <li>❌ Use your content in ads</li>
+          <li>❌ Share your private messages with third parties</li>
+          <li>❌ Use your content for commercial purposes</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          When you post something on Dayo, we can show it to other users (that's
+          the whole point), store it, and remove it if it breaks the rules. But
+          we don't sell your photos or use your data to make money without
+          paying you.
+        </p>
+
+        <h3>5.3 Our Content &amp; Intellectual Property</h3>
+
+        <p><strong>Dayo owns:</strong></p>
+        <ul>
+          <li>✅ The Dayo app and all its code</li>
+          <li>✅ The Dayo name, logo, and brand</li>
+          <li>✅ All features and technology</li>
+          <li>✅ Our written content (guides, FAQs, etc.)</li>
+          <li>✅ Our trademarks and copyrights</li>
+          <li>✅ Databases and data compilations</li>
+        </ul>
+
+        <p><strong>You Cannot:</strong></p>
+        <ul>
+          <li>❌ Copy or modify the app</li>
+          <li>❌ Use the Dayo name or logo</li>
+          <li>❌ Claim Dayo as your own</li>
+          <li>❌ Use Dayo technology without permission</li>
+          <li>❌ Create similar apps to compete with Dayo</li>
+          <li>❌ Reverse-engineer or decompile the app</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          Dayo is ours. The app, the name, the technology—all of it belongs to
+          Dayo. You can't copy it, modify it, or pretend it's yours.
+        </p>
+
+        <h3>5.4 Content Moderation &amp; Removal</h3>
+
+        <p><strong>Dayo can remove content that:</strong></p>
+        <ul>
+          <li>❌ Violates Community Guidelines</li>
+          <li>❌ Is illegal or harmful</li>
+          <li>❌ Violates someone's privacy</li>
+          <li>❌ Violates intellectual property</li>
+          <li>❌ Contains malware or spam</li>
+          <li>❌ Is reported by other users</li>
+          <li>❌ Violates these Terms</li>
+        </ul>
+
+        <p><strong>How We Handle Violations:</strong></p>
+        <ol>
+          <li>First violation: Content removal + warning</li>
+          <li>Second violation: Content removal + 24-48 hour suspension</li>
+          <li>Third violation: Content removal + 7-30 day suspension</li>
+          <li>Repeated violations: Permanent ban</li>
+        </ol>
+
+        <p><strong>You Can:</strong></p>
+        <ul>
+          <li>✅ Appeal content removal</li>
+          <li>✅ Request explanation</li>
+          <li>✅ Request data export</li>
+          <li>✅ Request account deletion</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          If your post breaks the rules, we'll remove it and probably give you a
+          warning. If you keep breaking the rules, we'll suspend your account.
+          If it's bad enough, we can ban you permanently. You can ask us to
+          explain why we removed something or appeal the decision.
+        </p>
+
+        <h3>5.5 Reporting Content Violations</h3>
+
+        <p><strong>If you see content that violates these Terms:</strong></p>
+        <ol>
+          <li>Long-press the post or user profile</li>
+          <li>Select "Report"</li>
+          <li>Choose the violation type</li>
+          <li>Add details (optional)</li>
+          <li>Submit report</li>
+        </ol>
+
+        <p><strong>Our Moderation Team:</strong></p>
+        <ul>
+          <li>Reviews all reports within 48 hours</li>
+          <li>Investigates the reported content</li>
+          <li>Takes appropriate action</li>
+          <li>Notifies you of outcome (if applicable)</li>
+        </ul>
+
+        <p><strong>What Happens:</strong></p>
+        <ul>
+          <li>✅ Content removed</li>
+          <li>✅ User warned or suspended</li>
+          <li>✅ Serious violations reported to authorities</li>
+          <li>✅ All evidence preserved</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          See something wrong? Report it. We'll check it out and take action if
+          needed. Serious crimes will be reported to the police.
+        </p>
+
+        <h3>5.6 Copyright &amp; DMCA Takedown</h3>
+
+        <p><strong>If you think your copyright is violated:</strong></p>
+        <p>
+          Email: dayo.ph.it.services@gmail.com<br />
+          Subject: "DMCA Takedown Request"
+        </p>
+
+        <p><strong>Include:</strong></p>
+        <ul>
+          <li>Your name and contact info</li>
+          <li>Description of the work</li>
+          <li>Where the infringing content is (URL or user)</li>
+          <li>Why you own the copyright</li>
+          <li>A statement under oath that you own it</li>
+          <li>Your signature</li>
+        </ul>
+
+        <p><strong>Timeline:</strong></p>
+        <ul>
+          <li>We review within 24-48 hours</li>
+          <li>If verified, we remove the content</li>
+          <li>We notify the user who posted it</li>
+          <li>They can file a counter-notice if they disagree</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          If someone posted your copyrighted work (photo, music, video, etc.)
+          without permission, you can tell us and we'll take it down.
+        </p>
+        <hr />
+        <hr />
+        <h2 id="section-6">
+          <span class="section-num">06</span>6. Virtual Currency & In-App
+          Purchases
+        </h2>
+        <p>
+          This section governs your use of Dayo Coins, in-app purchases, and all
+          virtual currency transactions within the Service. It outlines the
+          rules for purchasing, using, and managing virtual items, as well as
+          the rights, restrictions, and limitations that apply to such digital
+          assets. By using these features, you agree that all in-app purchases
+          are final (except where explicitly stated), and that virtual currency
+          has no real-world monetary value outside the Service.
+        </p>
+
+        <p>
+          Violation of these prohibitions may result in immediate suspension or
+          termination of your account and may be referred to appropriate law
+          enforcement authorities.
+        </p>
+        <h3>6.1 Dayo Coins Explained</h3>
+
+        <p><strong>What are Dayo Coins?</strong></p>
+        <p>Dayo Coins (DC) are virtual currency used in the app to:</p>
+        <ul>
+          <li>✅ Create tournaments</li>
+          <li>✅ Participate in premium matches</li>
+          <li>✅ Access premium features</li>
+          <li>✅ Unlock cosmetics and profile themes</li>
+          <li>✅ Tip players and communities</li>
+          <li>✅ Purchase item boosts</li>
+        </ul>
+
+        <p>
+          <strong>Important:</strong> Dayo Coins have NO real-world value and
+          cannot be converted back to cash.
+        </p>
+
+        <p><strong>Ownership &amp; Control:</strong></p>
+        <ul>
+          <li>Dayo Coins are owned and controlled by Dayo</li>
+          <li>
+            You receive a license to use them (you don't own them permanently)
+          </li>
+          <li>Coins may expire after 2 years of account inactivity</li>
+          <li>Dayo may modify, suspend, or terminate coin value at any time</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          Dayo Coins are like video game currency. You buy them with real money,
+          use them in the app, and they only work in Dayo. You can't sell them
+          or turn them back into money. If you don't use your account for 2
+          years, we might delete your coins.
+        </p>
+
+        <h3>6.2 How to Purchase Coins</h3>
+
+        <p><strong>Supported Methods:</strong></p>
+        <ul>
+          <li>✅ Google Play (Android)</li>
+          <li>✅ Apple App Store (iOS)</li>
+          <li>✅ Credit/debit card (where available)</li>
+          <li>✅ GCash and other local payment methods (Philippines)</li>
+          <li>✅ Other payment processors (varies by region)</li>
+        </ul>
+
+        <p><strong>Pricing (Example - Prices vary by region):</strong></p>
+        <ul>
+          <li>100 coins = ₱50</li>
+          <li>500 coins = ₱200</li>
+          <li>1,000 coins = ₱350</li>
+          <li>5,000 coins = ₱1,500</li>
+        </ul>
+
+        <p><strong>Bonus Coins:</strong></p>
+        <ul>
+          <li>✅ Sometimes we offer 10-50% bonus coins during promotions</li>
+          <li>✅ Sign-up bonuses for new players</li>
+          <li>✅ Loyalty rewards for active players</li>
+          <li>✅ Seasonal events and special offers</li>
+        </ul>
+
+        <p><strong>Transaction Security:</strong></p>
+        <ul>
+          <li>✅ All purchases use encrypted, secure payment processing</li>
+          <li>✅ Dayo never sees your full credit card number</li>
+          <li>✅ Payment processors (Google, Apple) handle billing</li>
+          <li>✅ You receive a receipt via email</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          You buy coins using your credit card, PayPal, phone payment, or other
+          methods. Different amounts cost different prices. The exact price
+          depends on where you are and which payment method you use. Sometimes
+          we give you extra coins for free during sales.
+        </p>
+
+        <h3>6.3 Use License for Coins</h3>
+
+        <p><strong>What You Can Do:</strong></p>
+        <ul>
+          <li>✅ Use it to pay for fixed 5 Dayo Coins platform fee</li>
+          <li>✅ Use them to participate in events (feature coming soon)</li>
+          <li>✅ Gift them to friends (feature coming soon)</li>
+        </ul>
+
+        <p>
+          <strong>Important – Platform Fee:</strong><br />
+          Certain actions in the Service may require a fixed platform fee (e.g.,
+          5 Dayo Coins) to access or use specific features. Once this platform
+          fee is used to unlock or complete a transaction, it is considered
+          fully consumed and is strictly non-refundable.
+        </p>
+
+        <p><strong>What You CANNOT Do:</strong></p>
+        <ul>
+          <li>❌ Refund them for real money</li>
+          <li>❌ Sell or trade them to other users</li>
+          <li>❌ Transfer them to other apps or games</li>
+          <li>❌ Use them outside the Dayo app</li>
+          <li>❌ Charge back or dispute the purchase</li>
+        </ul>
+
+        <p><strong>Expiration:</strong></p>
+        <ul>
+          <li>Coins expire after 2 years of account inactivity</li>
+          <li>If you haven't logged in for 24 months, coins may be deleted</li>
+          <li>We'll send you a warning email before expiration</li>
+          <li>
+            You can keep coins active by logging in at least once per year
+          </li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          Once you buy coins, you own them until you spend them or they expire
+          (2 years of not using your account). You can't sell them, trade them,
+          or get your money back. But you can use them for what they're designed
+          for—buying stuff in the app.
+        </p>
+
+        <h3>6.4 Accidental Purchases &amp; 48-Hour Refund Window</h3>
+
+        <p><strong>If you accidentally buy coins:</strong></p>
+        <p>You have a <strong>48-hour window</strong> to request a refund:</p>
+        <ol>
+          <li>Email: dayo.ph.it.services@gmail.com</li>
+          <li>Subject: "Accidental Coin Purchase"</li>
+          <li>
+            Include:
+            <ul>
+              <li>Your account email</li>
+              <li>Approximate purchase time</li>
+              <li>Amount (coins or local currency)</li>
+              <li>Explanation of accident</li>
+            </ul>
+          </li>
+          <li>We respond within 24 hours</li>
+        </ol>
+
+        <p><strong>Refund Eligibility:</strong></p>
+        <ul>
+          <li>✅ You didn't spend the coins yet</li>
+          <li>✅ Within 48 hours of purchase</li>
+          <li>✅ It was clearly accidental (double-tap, etc.)</li>
+          <li>✅ Your account is in good standing</li>
+          <li>❌ Change of mind</li>
+          <li>❌ You already spent the coins</li>
+          <li>❌ After 48 hours</li>
+          <li>❌ Repeated accidental purchases</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          If you accidentally buy coins (like you tapped the button twice), tell
+          us within 2 days and we'll probably give you your money back. But if
+          you already spent the coins or you're trying to scam us, we'll say no.
+        </p>
+
+        <h3>6.5 Refund Policy</h3>
+
+        <p><strong>When You CAN Get a Refund:</strong></p>
+        <ul>
+          <li>✅ Duplicate charge (charged twice for one purchase)</li>
+          <li>
+            ✅ Unauthorized purchase (your account was hacked/compromised)
+          </li>
+          <li>✅ Technical error (coins didn't show up after payment)</li>
+          <li>✅ Accidental purchase (within 48 hours, not spent)</li>
+          <li>✅ Defective coins (coins disappeared or couldn't be spent)</li>
+        </ul>
+
+        <p><strong>When You CANNOT Get a Refund:</strong></p>
+        <ul>
+          <li>❌ Change of mind or buyer's remorse</li>
+          <li>❌ Coins already spent or used</li>
+          <li>❌ Coins gifted to other users</li>
+          <li>❌ After 48 hours (unless fraud)</li>
+          <li>❌ You broke the Terms of Service</li>
+          <li>❌ Your account was suspended or banned</li>
+          <li>❌ Dispute with your bank (use chargeback process instead)</li>
+        </ul>
+
+        <p><strong>How to Request a Refund:</strong></p>
+
+        <p><strong>Method 1: Google Play / App Store (Fastest)</strong></p>
+        <ul>
+          <li>Open Play Store/App Store</li>
+          <li>Find Dayo purchase</li>
+          <li>Request refund directly</li>
+          <li>Reason: Usually auto-approved within hours</li>
+        </ul>
+
+        <p><strong>Method 2: Email Support</strong></p>
+        <ul>
+          <li>Email: dayo.ph.it.services@gmail.com</li>
+          <li>Subject: "Coin Refund Request"</li>
+          <li>
+            Include:
+            <ul>
+              <li>Order ID (from receipt email)</li>
+              <li>Transaction date</li>
+              <li>Amount</li>
+              <li>Reason</li>
+            </ul>
+          </li>
+          <li>Response time: 5-7 business days</li>
+        </ul>
+
+        <p><strong>Timeline:</strong></p>
+        <ul>
+          <li>Approved: Refund appears in 3-10 business days</li>
+          <li>Denied: We'll explain why</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          You can get a refund if we made a mistake or if you were hacked. But
+          if you just changed your mind after spending coins, tough luck. Use
+          the app store's refund button first—it's faster. If that doesn't work,
+          email us.
+        </p>
+
+        <h3>6.6 Unauthorized Charges &amp; Fraud</h3>
+
+        <p><strong>If You Were Charged for Coins You Didn't Buy:</strong></p>
+        <p>This is fraud. Here's what to do:</p>
+
+        <p><strong>Step 1: Secure Your Account (Immediately)</strong></p>
+        <ul>
+          <li>Change your Gmail/Apple password</li>
+          <li>Enable 2FA in Dayo (Settings &gt; Security)</li>
+          <li>Check if your email recovery address is yours</li>
+          <li>Remove unfamiliar devices from Google/Apple account</li>
+        </ul>
+
+        <p><strong>Step 2: Stop the Bleeding</strong></p>
+        <ul>
+          <li>Remove your payment method from Google/Apple</li>
+          <li>Set up a new payment method if needed</li>
+          <li>Contact your bank/card issuer to report fraud</li>
+          <li>Block the card if necessary</li>
+        </ul>
+
+        <p><strong>Step 3: Contact Dayo</strong></p>
+        <ul>
+          <li>Email: dayo.ph.it.services@gmail.com</li>
+          <li>Subject: "URGENT: Unauthorized Coin Charges"</li>
+          <li>
+            Include:
+            <ul>
+              <li>Fraudulent purchase dates/amounts</li>
+              <li>Any suspicious device logins</li>
+              <li>Screenshots of charges you didn't make</li>
+              <li>Your bank fraud report number</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><strong>What We'll Do:</strong></p>
+        <ul>
+          <li>✅ Investigate the unauthorized charges</li>
+          <li>✅ Issue refunds for fraudulent purchases</li>
+          <li>✅ Secure your account</li>
+          <li>✅ Report to Google/Apple and payment processor</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          If your account was hacked and someone bought coins, tell us ASAP.
+          We'll refund the fraudulent charges and secure your account. Don't
+          wait—the longer you wait, the harder it is to prove it wasn't you.
+        </p>
+
+        <h3>6.7 Chargebacks &amp; Payment Disputes - CONSEQUENCES</h3>
+
+        <p><strong>WARNING: DO NOT INITIATE A CHARGEBACK</strong></p>
+
+        <p>
+          If you dispute a payment through your bank/credit card company instead
+          of asking us for a refund:
+        </p>
+
+        <p><strong>Your Account Will:</strong></p>
+        <ul>
+          <li>❌ Be permanently banned (no appeal)</li>
+          <li>❌ Have all coins forfeited (no refund)</li>
+          <li>❌ Be blocked from future purchases</li>
+          <li>❌ Be reported to fraud prevention databases</li>
+        </ul>
+
+        <p><strong>You May Face:</strong></p>
+        <ul>
+          <li>❌ Collection action for chargeback fees ($25-$100)</li>
+          <li>❌ Legal action from Dayo</li>
+          <li>❌ Blacklisting by payment processors</li>
+          <li>❌ Difficulty making online purchases elsewhere</li>
+          <li>❌ Civil judgment against you</li>
+        </ul>
+
+        <p><strong>Instead, Talk to Us First:</strong></p>
+        <ul>
+          <li>Email: dayo.ph.it.services@gmail.com</li>
+          <li>Explain the issue</li>
+          <li>We'll resolve it directly</li>
+          <li>Faster, cheaper, and you keep your account</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          Don't tell your bank to reverse the charge. That makes things way
+          worse. Just email us and we'll fix it. If you do a chargeback, we'll
+          ban your account permanently and possibly take you to court. It's not
+          worth it.
+        </p>
+
+        <hr />
+        <hr />
+        <h2 id="section-7">
+          <span class="section-num">07</span>7. Third-Party Links and Services
+        </h2>
+        <p>
+          The Service may contain links to third-party websites or services.
+          These links are provided for your convenience only. We have no control
+          over third-party content and are not responsible for its accuracy,
+          legality, or availability. Accessing third-party services is at your
+          own risk.
+        </p>
+        <h3>7.1 Third-Party Content</h3>
+
+        <p><strong>Dayo is not responsible for:</strong></p>
+        <ul>
+          <li>❌ Links to external websites</li>
+          <li>❌ Third-party services (Google, Apple, PayPal, etc.)</li>
+          <li>❌ Content on external sites</li>
+          <li>❌ Accuracy of third-party information</li>
+          <li>❌ Security of third-party platforms</li>
+          <li>❌ Privacy practices of third-party services</li>
+        </ul>
+
+        <p><strong>Websites and Services We Use:</strong></p>
+        <ul>
+          <li>Google Play Store / Apple App Store</li>
+          <li>Google Billing / Apple IAP</li>
+          <li>Supabase (database)</li>
+          <li>Firebase (analytics)</li>
+          <li>GCash, PayMaya (payment processing)</li>
+          <li>SMS services for notifications</li>
+        </ul>
+
+        <p><strong>You Access at Your Own Risk:</strong></p>
+        <p>
+          When you click a link to another site or use a third-party service
+          from Dayo, you leave our platform. Their terms apply, not ours.
+        </p>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          Dayo uses other companies' services like Google Play and payment
+          processors. If those services are down or have problems, that's not
+          our fault. Read their privacy policies and terms—they're different
+          from ours.
+        </p>
+
+        <h3>7.2 Links to External Sites</h3>
+
+        <p><strong>Some Dayo features link to:</strong></p>
+        <ul>
+          <li>Sports news websites</li>
+          <li>Tournament registration sites</li>
+          <li>Sports equipment stores</li>
+          <li>Social media platforms</li>
+          <li>Payment processors</li>
+        </ul>
+
+        <p><strong>Disclaimer:</strong></p>
+        <ul>
+          <li>We don't control these sites</li>
+          <li>We don't endorse everything on them</li>
+          <li>
+            We're not responsible if they're down, hacked, or have bad content
+          </li>
+          <li>Their terms and privacy policies apply</li>
+          <li>We're not liable for any damage</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          If we link to another website and something bad happens (you lose
+          money, get scammed, etc.), that's between you and them. We're just the
+          middleman. We're not responsible.
+        </p>
+
+        <h3>7.3 Prohibited Activities Through Third Parties</h3>
+
+        <p><strong>You cannot use Dayo to:</strong></p>
+        <ul>
+          <li>
+            ❌ Violate another platform's terms (Facebook, Instagram, Google,
+            etc.)
+          </li>
+          <li>❌ Spam or harass through linked services</li>
+          <li>❌ Hack or exploit third-party services</li>
+          <li>❌ Circumvent security on external platforms</li>
+          <li>❌ Violate intellectual property on partner sites</li>
+          <li>❌ Use third-party APIs without permission</li>
+        </ul>
+
+        <p><strong>If You Do:</strong></p>
+        <ul>
+          <li>Your Dayo account may be banned</li>
+          <li>The third-party may ban you too</li>
+          <li>You may face legal action from both Dayo and the third party</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          Don't use Dayo to break other people's rules or services. If you do,
+          you're breaking the law and we can ban you.
+        </p>
+
+        <hr />
+        <hr />
+        <h2 id="section-8">
+          <span class="section-num">08</span>8. Limitation of Liability
+        </h2>
+        <p>
+          To the maximum extent permitted by applicable law, Dayo, Inc. and its
+          directors, employees, and agents shall not be liable for any indirect,
+          incidental, special, consequential, or punitive damages arising from
+          your use of or inability to use the Service, including loss of data,
+          lost profits, or personal injury, even if we have been advised of the
+          possibility of such damages.
+        </p>
+        <p>
+          Our total aggregate liability to you for all claims arising out of or
+          relating to these Terms or the Service shall not exceed the greater of
+          (a) the amount you paid to us in the twelve months preceding the
+          claim, or (b) one hundred Philippine pesos (PHP 100).
+        </p>
+        <h3>8.1 Disclaimer of Warranties</h3>
+
+        <p><strong>Dayo is provided "AS IS" without warranties:</strong></p>
+        <ul>
+          <li>❌ We don't guarantee the app will work perfectly</li>
+          <li>❌ We don't guarantee it will work on your device</li>
+          <li>❌ We don't guarantee accurate location data</li>
+          <li>❌ We don't guarantee data won't be lost</li>
+          <li>❌ We don't guarantee matches will be safe</li>
+          <li>❌ We don't guarantee other users won't be bad people</li>
+          <li>❌ We don't guarantee we'll find you perfect matches</li>
+        </ul>
+
+        <p><strong>What This Means:</strong></p>
+        <ul>
+          <li>The app might crash</li>
+          <li>Features might stop working</li>
+          <li>Your data might get corrupted</li>
+          <li>Matches might be dangerous</li>
+          <li>People might lie about their abilities</li>
+          <li>GPS might show wrong locations</li>
+          <li>You use it at your own risk</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          We did our best to make Dayo safe and fun. But we can't promise it
+          will work perfectly all the time or that bad things won't happen. If
+          something breaks or someone hurts you, we're not responsible.
+        </p>
+
+        <h3>8.2 Dayo Does NOT Referee Matches</h3>
+
+        <p><strong>Important:</strong> Dayo is a platform, not a referee:</p>
+        <ul>
+          <li>❌ We don't watch your matches</li>
+          <li>❌ We don't determine who won</li>
+          <li>❌ We don't enforce sports rules</li>
+          <li>❌ We don't settle player disputes</li>
+          <li>❌ We don't investigate match-fixing claims</li>
+          <li>❌ We don't handle payment disputes between players</li>
+          <li>❌ We don't mediate disagreements</li>
+        </ul>
+
+        <p><strong>You are Responsible For:</strong></p>
+        <ul>
+          <li>✅ Reporting scores honestly</li>
+          <li>✅ Resolving disputes with other players</li>
+          <li>✅ Following agreed-upon rules</li>
+          <li>✅ Settling payment/booking issues directly</li>
+          <li>✅ Contacting authorities if someone commits fraud</li>
+        </ul>
+
+        <p><strong>If There's a Dispute:</strong></p>
+        <ol>
+          <li>Try to resolve it directly with the other player(s)</li>
+          <li>Contact the match organizer</li>
+          <li>Go to small claims court if necessary</li>
+          <li>Contact police if it's a crime</li>
+        </ol>
+
+        <p>
+          <strong>Dayo's Role:</strong> We remove users who repeatedly violate
+          our Community Guidelines, but we don't settle individual disputes.
+        </p>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          Dayo is like a bulletin board—we let you post matches and find
+          players. But we don't watch the games or decide who's right in a
+          dispute. That's between you and the other players. If someone commits
+          a crime or breaks our rules, we can ban them.
+        </p>
+
+        <h3>8.3 Limitation of Liability</h3>
+
+        <p><strong>We are not liable for:</strong></p>
+        <ul>
+          <li>❌ Any direct, indirect, or incidental damages</li>
+          <li>❌ Loss of money, earnings, or data</li>
+          <li>❌ Injuries at matches</li>
+          <li>❌ Accidents or collisions</li>
+          <li>❌ Theft or robbery at a venue</li>
+          <li>❌ Other users' actions or behavior</li>
+          <li>❌ Equipment damage</li>
+          <li>❌ Fraud by other users</li>
+          <li>❌ App bugs or glitches</li>
+          <li>❌ Data breaches (unless caused by Dayo's gross negligence)</li>
+          <li>❌ Server downtime or app crashes</li>
+          <li>❌ Deleted accounts or data loss</li>
+        </ul>
+
+        <p>
+          <strong
+            >Even if we could have prevented it, we're not paying for:</strong
+          >
+        </p>
+        <ul>
+          <li>Your hospital bills from a match injury</li>
+          <li>Lost wages from getting hurt</li>
+          <li>Equipment you damaged</li>
+          <li>Money someone stole from you</li>
+          <li>Emotional distress</li>
+          <li>"Punitive damages" (extra money to punish us)</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          If something bad happens—you get hurt, lose money, or have a
+          problem—we're not paying for it. You use Dayo at your own risk. The
+          only exception is if we did something really, really bad (like
+          intentionally hacked your account), in which case we might pay for
+          direct financial losses, but not more than you paid us.
+        </p>
+
+        <h3>8.4 Cap on Damages</h3>
+
+        <p><strong>MAXIMUM LIABILITY:</strong></p>
+        <p>
+          If we are found liable for anything, we will pay you a maximum of:
+        </p>
+
+        <p>
+          <strong
+            >The total amount you paid to Dayo in the past 12 months</strong
+          >
+        </p>
+
+        <p><strong>Examples:</strong></p>
+        <ul>
+          <li>If you spent ₱1,000 on coins, we pay max ₱1,000</li>
+          <li>If you never spent money, we pay ₱0</li>
+          <li>If you spent ₱10,000, we pay max ₱10,000</li>
+        </ul>
+
+        <p><strong>This cap applies to:</strong></p>
+        <ul>
+          <li>All claims combined</li>
+          <li>Lawsuits</li>
+          <li>Disputes</li>
+          <li>Any type of case</li>
+        </ul>
+
+        <p><strong>What This Means:</strong></p>
+        <p>
+          Even if you claim ₱1 million in damages, we only pay up to what you
+          actually gave us.
+        </p>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          We're only on the hook for as much money as you paid us. That's it. If
+          you paid us nothing, you get nothing even if we mess up badly (unless
+          it's a privacy/data breach, which might be handled differently under
+          Philippine law).
+        </p>
+
+        <ul>
+          <li>✅ Amount in ₱ is clearly displayed</li>
+          <li>✅ Number of coins and bonus coins shown</li>
+          <li>✅ Total price shown before confirming purchase</li>
+          <li>✅ Receipt sent to your email from Google Play</li>
+          <li>✅ Transaction ID provided for support reference</li>
+        </ul>
+
+        <hr />
+        <hr />
+        <h2 id="section-9">
+          <span class="section-num">09</span>9. Termination and Account
+          Suspension
+        </h2>
+        <p>
+          We reserve the right to suspend or terminate your account and access
+          to the Service at any time, with or without notice, for any reason,
+          including if we believe you have violated these Terms. Upon
+          termination, your license to use the Service will immediately cease.
+        </p>
+        <p>
+          You may delete your account at any time through the app settings.
+          Account deletion is subject to the data retention practices described
+          in our Privacy Policy.
+        </p>
+        <h3>9.1 Why Dayo Can Terminate Your Account</h3>
+
+        <p>
+          <strong
+            >We can suspend or permanently ban your account if you:</strong
+          >
+        </p>
+        <ul>
+          <li>❌ Violate these Terms or Community Guidelines</li>
+          <li>❌ Engage in illegal activity</li>
+          <li>❌ Harass, threaten, or abuse other users</li>
+          <li>❌ Exploit app bugs or security vulnerabilities</li>
+          <li>❌ Create multiple accounts to evade bans</li>
+          <li>❌ Use automated tools (bots, scrapers)</li>
+          <li>❌ Commit fraud or misrepresent yourself</li>
+          <li>❌ Engage in match-fixing or cheating</li>
+          <li>❌ Initiate chargebacks on payments</li>
+          <li>❌ Engage in child safety violations</li>
+          <li>❌ Post illegal or extremely harmful content</li>
+        </ul>
+
+        <p>
+          <strong>Serious violations = Permanent ban (no appeal)</strong><br />
+          <strong>Minor violations = Warnings → Suspension → Ban</strong>
+        </p>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          Break the rules repeatedly or do something really bad (like harassing
+          someone or committing a crime), and we can ban you permanently. We
+          give warnings for minor stuff first, but major violations get
+          immediate permanent bans.
+        </p>
+
+        <h3>9.2 Levels of Enforcement</h3>
+
+        <p><strong>Level 1: Warning</strong></p>
+        <ul>
+          <li>✅ Content removed</li>
+          <li>✅ Warning message sent</li>
+          <li>✅ Education about policy</li>
+        </ul>
+
+        <p><strong>Level 2: Temporary Suspension (24-48 hours)</strong></p>
+        <ul>
+          <li>❌ Account disabled for 24-48 hours</li>
+          <li>❌ Cannot login or use features</li>
+          <li>❌ Message explains violation</li>
+          <li>✅ Account automatically restores after period</li>
+        </ul>
+
+        <p><strong>Level 3: Extended Suspension (7-30 days)</strong></p>
+        <ul>
+          <li>❌ Account disabled for 7-30 days</li>
+          <li>❌ Longer restriction period</li>
+          <li>❌ Typically for repeated violations</li>
+          <li>✅ Account automatically restores after period</li>
+        </ul>
+
+        <p><strong>Level 4: Permanent Ban</strong></p>
+        <ul>
+          <li>❌ Account deleted permanently</li>
+          <li>❌ Cannot appeal</li>
+          <li>❌ No re-registration from same device/email</li>
+          <li>❌ All coins/data forfeited</li>
+        </ul>
+
+        <p><strong>Immediate Ban (No Warning):</strong></p>
+        <ul>
+          <li>For child safety violations</li>
+          <li>For sharing CSAM (child abuse material)</li>
+          <li>For serious illegal activity</li>
+          <li>For severe harassment</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          First time doing something wrong? Warning. Second time? Suspended for
+          a day or two. Third time? Suspended for a week or longer. Really bad
+          stuff? Banned forever with no way back.
+        </p>
+
+        <h3>9.3 Account Suspension Notification</h3>
+
+        <p><strong>When we suspend your account, we'll:</strong></p>
+        <ul>
+          <li>✅ Send you an email explaining the violation</li>
+          <li>✅ Tell you which content/behavior violated terms</li>
+          <li>✅ Explain the suspension period</li>
+          <li>✅ Provide a link to appeal</li>
+        </ul>
+
+        <p>
+          <strong
+            >You have 7 days to appeal before the decision is final</strong
+          >
+        </p>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          We'll tell you what you did wrong and how long you're suspended for.
+          You can email us to complain if you think we made a mistake.
+        </p>
+
+        <h3>9.4 Appeals Process</h3>
+
+        <p><strong>If you think we made a mistake:</strong></p>
+        <ol>
+          <li>Email: dayo.ph.it.services@gmail.com</li>
+          <li>Subject: "Appeal - Account Suspension"</li>
+          <li>
+            Include:
+            <ul>
+              <li>Your account email</li>
+              <li>Explanation of why the action was wrong</li>
+              <li>Evidence (screenshots, context)</li>
+              <li>Any additional information</li>
+            </ul>
+          </li>
+        </ol>
+
+        <p><strong>Our Process:</strong></p>
+        <ul>
+          <li>We review within 5 business days</li>
+          <li>We may uphold, reduce, or reverse the decision</li>
+          <li>You'll get an email with our final decision</li>
+          <li>Final decisions cannot be appealed</li>
+        </ul>
+
+        <p>
+          <strong>Appeal Win Rate:</strong> ~15% of appeals overturn decisions
+          (most are deserved bans)
+        </p>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          Think we got it wrong? Tell us why. We'll review your complaint. But
+          honestly, most of the time we got it right.
+        </p>
+
+        <h3>9.5 Account Deletion by You</h3>
+
+        <p><strong>You can delete your account anytime:</strong></p>
+        <ol>
+          <li>Settings &gt; Account &gt; Delete Account</li>
+          <li>Confirm deletion</li>
+          <li>Account deleted within 24 hours</li>
+        </ol>
+
+        <p><strong>When you delete your account:</strong></p>
+        <ul>
+          <li>❌ Account cannot be recovered</li>
+          <li>❌ All coins are forfeited (no refund)</li>
+          <li>❌ All personal data deleted</li>
+          <li>❌ Messages deleted (within 24 hours)</li>
+          <li>✅ You can create a new account after 30 days</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          You can delete your account whenever you want. It's gone forever. You
+          lose your coins. After 30 days, you can make a new account.
+        </p>
+
+        <h3>9.6 Data Upon Termination</h3>
+
+        <p><strong>If your account is suspended/terminated:</strong></p>
+        <ul>
+          <li>❌ Profile hidden from search (within 24 hours)</li>
+          <li>❌ Messages deleted (within 24 hours)</li>
+          <li>❌ Posts anonymized or deleted (within 48 hours)</li>
+          <li>
+            ✅ Photos/videos you didn't post remain (other users' content)
+          </li>
+          <li>✅ Match history/results remain (for sports integrity)</li>
+          <li>✅ Payment records kept (legal requirement - 7 years)</li>
+          <li>
+            ✅ Moderation records kept (prevent ban evasion - indefinitely)
+          </li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          Your personal stuff disappears. But match results stay (so nobody can
+          fake their history). We keep payment records and ban info forever to
+          stop people from creating new accounts after being banned.
+        </p>
+
+        <h3>9.7 Reactivation After Suspension</h3>
+
+        <p><strong>If your account is temporarily suspended:</strong></p>
+        <ul>
+          <li>✅ Automatically reactivated after suspension period ends</li>
+          <li>✅ No action needed from you</li>
+          <li>✅ Your data preserved (nothing deleted)</li>
+        </ul>
+
+        <p><strong>If your account is permanently banned:</strong></p>
+        <ul>
+          <li>❌ Cannot be reactivated</li>
+          <li>❌ Cannot appeal after 7 days</li>
+          <li>❌ Must wait 30 days to create new account (if allowed)</li>
+        </ul>
+
+        <p><strong>Ban Evasion:</strong></p>
+        <ul>
+          <li>
+            If you try to create new accounts after a ban, we'll ban those too
+          </li>
+          <li>
+            We can detect ban evasion through device, IP, payment methods, etc.
+          </li>
+          <li>Repeated ban evasion may result in legal action</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          Short suspension? Your account comes back automatically. Permanent
+          ban? You're done with Dayo. Try to sneak back with a fake account?
+          We'll catch you and ban again.
+        </p>
+
+        <hr />
+        <hr />
+        <h2 id="section-10">
+          <span class="section-num">10</span>10. Modifications to Service and
+          Terms
+        </h2>
+        <p>
+          We may update these Terms from time to time. When we make material
+          changes, we will notify you through the app or by email at least 14
+          days before the updated Terms take effect. Your continued use of the
+          Service after the effective date of the revised Terms constitutes your
+          acceptance. If you do not agree to the updated Terms, you must stop
+          using the Service and may delete your account.
+        </p>
+        <h3>10.1 Changes to the Service</h3>
+
+        <p>
+          <strong
+            >Dayo may change, update, discontinue, or modify features at any
+            time:</strong
+          >
+        </p>
+        <ul>
+          <li>✅ We will notify you of major changes</li>
+          <li>
+            ✅ Critical security fixes may be immediate (no notice needed)
+          </li>
+          <li>✅ Feature updates will have 14 days notice</li>
+          <li>✅ You can delete your account if you don't accept changes</li>
+        </ul>
+
+        <p><strong>What We Cannot Change Without Notice:</strong></p>
+        <ul>
+          <li>✅ Payment refund policy</li>
+          <li>✅ Age requirement</li>
+          <li>✅ Your data privacy rights</li>
+        </ul>
+
+        <p><strong>What We Can Change:</strong></p>
+        <ul>
+          <li>✅ App features and design</li>
+          <li>✅ Pricing of coins</li>
+          <li>✅ Match requirements</li>
+          <li>✅ Community Guidelines and moderation rules</li>
+          <li>✅ Technical requirements (minimum app version, etc.)</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          We might update the app, add features, or remove things. We'll tell
+          you first if it's a big change. If you don't like it, you can delete
+          your account.
+        </p>
+
+        <h3>10.2 Changes to These Terms</h3>
+
+        <p><strong>If we update these Terms:</strong></p>
+
+        <p><strong>We will:</strong></p>
+        <ul>
+          <li>✅ Post new version with updated "Last Updated" date</li>
+          <li>
+            ✅ Notify you in-app at least <strong>30 days</strong> before
+            changes take effect
+          </li>
+          <li>✅ Let you review the changes</li>
+          <li>
+            ✅ Continue following old Terms during the 30-day notice period
+          </li>
+        </ul>
+
+        <p><strong>You may:</strong></p>
+        <ul>
+          <li>✅ Accept new Terms by using Dayo after 30 days</li>
+          <li>
+            ✅ Reject new Terms by deleting your account before they take effect
+          </li>
+          <li>✅ Request data export before new Terms take effect</li>
+        </ul>
+
+        <p><strong>What This Means:</strong></p>
+        <ul>
+          <li>Continuing to use Dayo = you accept new Terms</li>
+          <li>Deleting account = you reject new Terms</li>
+          <li>We keep old Terms for 30 days</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          If we change the rules, we'll give you a heads-up. You have 30 days to
+          decide if you like the new rules. If you don't, delete your account.
+          If you keep using Dayo after 30 days, you accept the new rules.
+        </p>
+
+        <h3>10.3 Major vs. Minor Changes</h3>
+
+        <p><strong>Major Changes (require 30-day notice):</strong></p>
+        <ul>
+          <li>✅ Changes to refund policy</li>
+          <li>✅ Changes to moderation enforcement</li>
+          <li>✅ Changes to payment terms</li>
+          <li>✅ Changes to privacy practices</li>
+          <li>✅ New restrictions on use</li>
+        </ul>
+
+        <p><strong>Minor Changes (immediate):</strong></p>
+        <ul>
+          <li>✅ Typo corrections</li>
+          <li>✅ Clarifications</li>
+          <li>✅ Format changes</li>
+          <li>✅ More restrictive safety policies</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          Big rule changes = 30 days notice. Tiny fixes = immediate.
+        </p>
+
+        <hr />
+        <hr />
+        <h2 id="section-11">
+          <span class="section-num">11</span>11. Indemnification and Your Legal
+          Responsibility
+        </h2>
+        <p>
+          You agree to indemnify, defend, and hold harmless Dayo, Inc. and its
+          officers, directors, employees, and agents from and against any
+          claims, liabilities, damages, losses, and expenses � including
+          reasonable legal fees � arising out of or in any way related to your
+          use of the Service, your User Content, your violation of these Terms,
+          or your violation of any rights of another person.
+        </p>
+        <h3>11.1 You Indemnify Dayo</h3>
+
+        <p>
+          <strong
+            >You agree to defend, indemnify, and hold harmless Dayo from
+            any:</strong
+          >
+        </p>
+        <ul>
+          <li>✅ Claims, lawsuits, or damages</li>
+          <li>✅ Fines or penalties</li>
+          <li>✅ Attorney's fees or legal costs</li>
+        </ul>
+
+        <p><strong>...that arise from:</strong></p>
+        <ul>
+          <li>✅ Your violation of these Terms</li>
+          <li>✅ Your violation of any law</li>
+          <li>✅ Your content (posts, photos, messages)</li>
+          <li>✅ Your conduct on Dayo</li>
+          <li>✅ Your disputes with other users</li>
+          <li>✅ Your use of Dayo's features</li>
+          <li>✅ Your violation of anyone's rights</li>
+        </ul>
+
+        <p><strong>Example:</strong></p>
+        <p>
+          If you post a copyrighted photo without permission and the copyright
+          holder sues Dayo, you will reimburse Dayo's legal costs, damages, and
+          settlements.
+        </p>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          If you break the law or our rules on Dayo, and someone sues Dayo
+          because of it, you have to pay for our legal defense. So don't do
+          illegal stuff on our platform.
+        </p>
+
+        <h3>11.2 Dayo Indemnifies You (Limited)</h3>
+
+        <p>
+          <strong>Dayo will defend you against third-party claims that:</strong>
+        </p>
+        <ul>
+          <li>
+            Dayo's app code or design directly infringes their copyright or
+            patent
+          </li>
+        </ul>
+
+        <p><strong>This does NOT apply if:</strong></p>
+        <ul>
+          <li>❌ You modified the app</li>
+          <li>❌ You combined the app with other software</li>
+          <li>❌ You used it in violation of these Terms</li>
+          <li>❌ You used someone else's copyrighted content in your posts</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          We'll defend you if someone claims our app code is stolen. But that's
+          it. If you do something illegal or post someone else's copyrighted
+          work, you're on your own.
+        </p>
+
+        <hr />
+        <hr />
+        <h2 id="section-12">
+          <span class="section-num">12</span>12. Dispute Resolution and
+          Governing Law
+        </h2>
+        <p>
+          These Terms are governed by and construed in accordance with the laws
+          of the Republic of the Philippines. Any dispute arising out of or
+          relating to these Terms or the Service shall first be submitted to
+          good-faith negotiation between the parties. If the dispute is not
+          resolved within 30 days of written notice, it shall be submitted to
+          binding arbitration in Butuan City, Agusan Del Norte, Philippines, in
+          accordance with applicable Philippine arbitration law.
+        </p>
+        <p>
+          Nothing in this section limits either party's right to seek injunctive
+          or other equitable relief from a court of competent jurisdiction.
+        </p>
+        <h3>12.1 Informal Resolution</h3>
+
+        <p><strong>If you have a dispute with Dayo:</strong></p>
+        <ol>
+          <li>Email us: dayo.ph.it.services@gmail.com</li>
+          <li>Subject: "Dispute Resolution Request"</li>
+          <li>
+            Include:
+            <ul>
+              <li>Your account email</li>
+              <li>Detailed description of the issue</li>
+              <li>What resolution you want</li>
+              <li>Any evidence (screenshots, etc.)</li>
+            </ul>
+          </li>
+        </ol>
+
+        <p>
+          <strong>We will respond within 10 business days</strong> and try to
+          resolve it fairly.
+        </p>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          If we have a problem, email us and try to work it out. We'll get back
+          to you within 10 days.
+        </p>
+
+        <h3>12.2 If Informal Resolution Fails</h3>
+
+        <p>
+          <strong
+            >If we can't resolve it informally, binding arbitration
+            applies:</strong
+          >
+        </p>
+        <ul>
+          <li>
+            ✅ <strong>Neutral Arbitrator:</strong> A single, independent
+            arbitrator decides
+          </li>
+          <li>
+            ✅ <strong>Location:</strong> Manila, Philippines (or virtual
+            hearing)
+          </li>
+          <li>✅ <strong>Language:</strong> English or Tagalog</li>
+          <li>
+            ✅ <strong>Binding:</strong> Their decision is final and enforceable
+          </li>
+          <li>✅ <strong>Rules:</strong> Philippine Arbitration Law applies</li>
+          <li>
+            ✅ <strong>Faster:</strong> Usually resolved in 3-6 months (vs.
+            years in court)
+          </li>
+        </ul>
+
+        <p><strong>What It Costs:</strong></p>
+        <ul>
+          <li>
+            Arbitrator fee: Variable (₱5,000-₱50,000 depending on claim amount)
+          </li>
+          <li>Filing fee: ₱500-₱5,000 (based on claim amount)</li>
+          <li>
+            Each party pays their own attorney fees (unless arbitrator awards
+            them)
+          </li>
+          <li>Dayo pays arbitrator costs for claims under ₱50,000</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          If email doesn't work, you go to arbitration (private court) in
+          Manila. It's usually faster and cheaper than real court. The
+          arbitrator's decision is final—you can't appeal it.
+        </p>
+
+        <h3>12.3 Opt-Out of Arbitration</h3>
+
+        <p>
+          <strong>You can choose regular court instead of arbitration:</strong>
+        </p>
+        <ol>
+          <li>Email: dayo.ph.it.services@gmail.com</li>
+          <li>Subject: "OPT OUT OF ARBITRATION"</li>
+          <li>
+            Include: "I opt out of the arbitration clause in Dayo's Terms"
+          </li>
+          <li>Send within <strong>30 days</strong> of accepting these Terms</li>
+        </ol>
+
+        <p><strong>If You Opt Out:</strong></p>
+        <ul>
+          <li>✅ You can use Philippine courts</li>
+          <li>✅ You have the right to sue and go to trial</li>
+          <li>❌ It will be more expensive</li>
+          <li>❌ It will take longer (years vs. months)</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          Don't like arbitration? Tell us within 30 days and you can go to court
+          instead. But court is slow and expensive.
+        </p>
+
+        <h3>12.4 Small Claims Court</h3>
+
+        <p><strong>For claims under ₱50,000:</strong></p>
+        <ul>
+          <li>
+            ✅ You can use Philippine small claims court (faster and cheaper)
+          </li>
+          <li>✅ No attorney required</li>
+          <li>✅ Resolved in weeks or months</li>
+          <li>✅ Each side can represent themselves</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          For small money disputes (less than ₱50,000), you can use small claims
+          court, which is way faster and easier.
+        </p>
+
+        <h3>12.5 Class Action &amp; Representative Claim Waiver</h3>
+
+        <p>
+          <strong
+            >You agree that any dispute is resolved individually, NOT as a class
+            action or group lawsuit:</strong
+          >
+        </p>
+        <ul>
+          <li>❌ No class action lawsuits</li>
+          <li>❌ No group arbitrations</li>
+          <li>❌ No representative actions</li>
+          <li>❌ You cannot join other people's lawsuits against Dayo</li>
+          <li>❌ Other people cannot join your lawsuit</li>
+        </ul>
+
+        <p><strong>Why This Matters:</strong></p>
+        <ul>
+          <li>
+            Class actions are expensive for us but often don't pay individuals
+            much
+          </li>
+          <li>Individual arbitration/lawsuits are faster and fairer for you</li>
+          <li>You can still resolve with us directly</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          You can't sue us as part of a big group. You have to sue us
+          individually. This is actually better for you because you get paid
+          faster instead of waiting years and getting $1 like you would in a
+          class action.
+        </p>
+
+        <h3>12.6 Governing Law</h3>
+
+        <p>
+          <strong
+            >These Terms are governed by the laws of the Republic of the
+            Philippines:</strong
+          >
+        </p>
+        <ul>
+          <li>✅ Philippine law applies to all disputes</li>
+          <li>✅ You consent to jurisdiction in Manila, Philippines</li>
+          <li>
+            ✅ Philippine courts can resolve disputes (if you opt out of
+            arbitration)
+          </li>
+          <li>✅ No choice of law provisions apply</li>
+        </ul>
+
+        <p><strong>What This Means:</strong></p>
+        <ul>
+          <li>Philippine legal standards apply</li>
+          <li>
+            Republic Act 10173 (Data Privacy), RA 10175 (Cybercrime Prevention
+            Act), RA 10627 (Anti-Bullying) apply
+          </li>
+          <li>Conflicts governed by Philippine law</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          Philippines law applies to Dayo. If we have to go to court, it's in
+          the Philippines. Philippine courts will decide using Philippine laws.
+        </p>
+
+        <hr />
+        <hr />
+        <h2 id="section-13">
+          <span class="section-num">13</span>13. Privacy and Data Protection
+        </h2>
+        <p>
+          This section explains how Dayo collects, uses, stores, and protects
+          your personal data when you use the Service. We are committed to
+          complying with applicable data protection laws, including the
+          Philippine Data Privacy Act of 2012 (Republic Act No. 10173).
+        </p>
+
+        <p>
+          We implement reasonable administrative, technical, and physical
+          safeguards to protect your personal information against unauthorized
+          access, loss, misuse, or disclosure. However, no system is completely
+          secure, and you acknowledge that you use the Service at your own risk.
+        </p>
+        <h3>13.1 Privacy Policy</h3>
+
+        <p>
+          <strong
+            >Your privacy is governed by our separate Privacy Policy, which
+            explains:</strong
+          >
+        </p>
+        <ul>
+          <li>✅ What personal data we collect</li>
+          <li>✅ How we use your data</li>
+          <li>✅ Who we share it with</li>
+          <li>✅ How long we keep it</li>
+          <li>✅ Your rights (access, deletion, correction, export)</li>
+          <li>✅ Our data security practices</li>
+          <li>✅ Your choices (opt-out, consent, etc.)</li>
+        </ul>
+
+        <p><strong>Both documents apply:</strong></p>
+        <ul>
+          <li>These Terms = rules for using Dayo</li>
+          <li>Privacy Policy = rules for your data</li>
+        </ul>
+
+        <p>
+          <strong>If they conflict:</strong> Privacy Policy controls for
+          data-related issues
+        </p>
+
+        <p>
+          <strong>Read the Privacy Policy at:</strong> [Link to Privacy Policy]
+        </p>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          We have a separate privacy policy that explains how we handle your
+          personal info. Read it too—it's important.
+        </p>
+
+        <h3>13.2 Data Subject Rights</h3>
+
+        <p>
+          <strong
+            >You have the following rights under Philippine Data Privacy Law (RA
+            10173):</strong
+          >
+        </p>
+        <ul>
+          <li>
+            ✅ <strong>Right to Access:</strong> Request and receive all data we
+            have about you
+          </li>
+          <li>
+            ✅ <strong>Right to Export:</strong> Download your data in a
+            standard format
+          </li>
+          <li>
+            ✅ <strong>Right to Delete:</strong> Request permanent deletion
+            (with exceptions for legal records)
+          </li>
+          <li>
+            ✅ <strong>Right to Correction:</strong> Update inaccurate
+            information
+          </li>
+          <li>
+            ✅ <strong>Right to Object:</strong> Opt-out of non-essential
+            processing (analytics, marketing)
+          </li>
+          <li>
+            ✅ <strong>Right to Erasure:</strong> Be "forgotten" (within legal
+            limits)
+          </li>
+          <li>
+            ✅ <strong>Right to Complaint:</strong> File a complaint with the
+            National Privacy Commission
+          </li>
+        </ul>
+
+        <p><strong>How to Exercise These Rights:</strong></p>
+        <p>
+          Email: dayo.ph.it.services@gmail.com<br />
+          Subject: "Data Subject Rights Request"<br />
+          Include: Your account email + what you want
+        </p>
+
+        <p>
+          <strong>We respond within <strong>15 days</strong>.</strong>
+        </p>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          You own your data. You can ask us for it, download it, delete it, or
+          fix it. We have to respond within 2 weeks.
+        </p>
+
+        <h3>13.3 Data Retention</h3>
+
+        <p><strong>We keep your data for:</strong></p>
+        <ul>
+          <li>
+            Active accounts: For the life of your account + 30 days after
+            deletion
+          </li>
+          <li>Messages: 24 hours after account deletion</li>
+          <li>Payment records: 7 years (legal requirement)</li>
+          <li>
+            Abuse/moderation records: Indefinitely (to prevent ban evasion)
+          </li>
+          <li>Legal holds: As long as required by law</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          We delete your stuff when you delete your account, except for payment
+          records (we have to keep those for taxes) and ban records (so you
+          don't sneak back with a fake account).
+        </p>
+
+        <hr />
+        <hr />
+        <h2 id="section-14">
+          <span class="section-num">14</span>14. Contact, Support and Legal
+          Notice
+        </h2>
+        <h2>14.1 Informal Resolution</h2>
+
+        <p>If you have a dispute with Dayo:</p>
+
+        <ol>
+          <li>Email us: dayo.ph.it.services@gmail.com</li>
+          <li>
+            Include: Issue description, relevant details, resolution requested
+          </li>
+          <li>We will respond within <strong>10 business days</strong></li>
+          <li>Good faith attempt to resolve</li>
+        </ol>
+
+        <h2>14.2 Contact Information</h2>
+
+        <p>
+          <strong
+            >For any legal notices, disputes, or general inquiries:</strong
+          >
+        </p>
+
+        <p>
+          <strong>Email:</strong> dayo.ph.it.services@gmail.com<br />
+          <strong>Postal Address:</strong> Butuan City, Agusan Del Norte,
+          Republic of the Philippines<br />
+          <strong>Response Time:</strong> 5-10 business days<br />
+          <strong>Preferred Language:</strong> English or Tagalog
+        </p>
+
+        <p><strong>Include in your email:</strong></p>
+        <ul>
+          <li>Your account email</li>
+          <li>Subject line describing your issue</li>
+          <li>Detailed description</li>
+          <li>Any relevant attachments/screenshots</li>
+        </ul>
+
+        <h2>14.3 Customer Support</h2>
+
+        <p><strong>For technical issues, bugs, or account problems:</strong></p>
+        <ul>
+          <li>
+            Email: dayo.ph.it.services@gmail.com (Subject: "Technical Support")
+          </li>
+          <li>In-app: Settings &gt; Help &amp; Support &gt; Contact Us</li>
+          <li>Response time: 1-3 business days</li>
+        </ul>
+
+        <p>
+          <strong>Known Issues & FAQs:</strong> Check app's Help section first
+          (might be already resolved)
+        </p>
+
+        <h2>14.4 Reporting Violations</h2>
+
+        <p>
+          <strong
+            >To report a violation of these Terms or Community
+            Guidelines:</strong
+          >
+        </p>
+
+        <ol>
+          <li>In-app: Long-press user/post/message &gt; Report</li>
+          <li>Choose the violation type</li>
+          <li>Add details and screenshots</li>
+          <li>Submit</li>
+        </ol>
+
+        <p><strong>Response:</strong> We review within 48 hours</p>
+
+        <hr />
+        <hr />
+        <h2 id="section-15">
+          <span class="section-num">15</span>15. Intellectual Property and
+          Dayo's Rights
+        </h2>
+        <p>
+          These Terms, together with our Privacy Policy and Community
+          Guidelines, constitute the entire agreement between you and Dayo with
+          respect to the Service and supersede all prior agreements and
+          understandings. If any provision of these Terms is found to be invalid
+          or unenforceable, the remaining provisions shall remain in full force
+          and effect. Our failure to enforce any provision of these Terms shall
+          not constitute a waiver of our right to enforce it in the future.
+        </p>
+        <h3>15.1 Dayo's Intellectual Property</h3>
+
+        <p><strong>Dayo owns all intellectual property rights to:</strong></p>
+        <ul>
+          <li>✅ The Dayo app and all code</li>
+          <li>✅ App design, layout, and features</li>
+          <li>✅ Dayo name, logos, and trademarks</li>
+          <li>✅ All written content and guides</li>
+          <li>✅ Databases and data compilations</li>
+          <li>✅ Graphics, images, and videos we create</li>
+          <li>✅ Our technology and architecture</li>
+          <li>✅ API and software</li>
+        </ul>
+
+        <p>
+          <strong
+            >This is protected by copyright, trademark, and patent law in the
+            Philippines and internationally.</strong
+          >
+        </p>
+
+        <p><strong>You may not:</strong></p>
+        <ul>
+          <li>❌ Copy or download the app code</li>
+          <li>❌ Modify or create derivative works</li>
+          <li>❌ Reverse engineer, decompile, or disassemble</li>
+          <li>❌ Attempt to access the app's backend</li>
+          <li>❌ Use Dayo's logo, name, or branding</li>
+          <li>❌ Create a competing app based on Dayo's design</li>
+          <li>❌ Sell or commercialize Dayo's code</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          The Dayo app is ours. Don't try to copy it, steal the code, or make a
+          knockoff version. We'll sue you.
+        </p>
+
+        <h3>15.2 Your Content &amp; Rights</h3>
+
+        <p><strong>You retain all rights to content you create:</strong></p>
+        <ul>
+          <li>✅ Your photos, videos, text</li>
+          <li>✅ Your posts and comments</li>
+          <li>✅ Your personal information</li>
+          <li>✅ Your match reviews and ratings</li>
+        </ul>
+
+        <p><strong>By posting it, you grant Dayo:</strong></p>
+        <ul>
+          <li>✅ The right to display it (see Section 5)</li>
+          <li>✅ Limited permission to moderate it</li>
+          <li>✅ Right to use anonymized data for analytics</li>
+          <li>✅ Right to preserve it for evidence (if illegal content)</li>
+        </ul>
+
+        <p>
+          <strong>You retain ownership and can delete content anytime.</strong>
+        </p>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          What you post is yours. We can show it to other users and moderate it,
+          but we don't own it or sell it.
+        </p>
+
+        <h3>15.3 Third-Party IP</h3>
+
+        <p>
+          <strong
+            >If you post third-party content (someone else's copyrighted
+            material):</strong
+          >
+        </p>
+        <ul>
+          <li>❌ You need their permission first</li>
+          <li>✅ You can post with proper attribution</li>
+          <li>
+            ✅ Fair use applies in some cases (criticism, commentary, parody)
+          </li>
+          <li>❌ We will remove it if the copyright holder complains</li>
+          <li>❌ You may face legal action from the copyright holder</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          Don't post someone else's copyrighted work without asking. If you do,
+          we'll take it down and they might sue you.
+        </p>
+
+        <hr />
+        <hr />
+        <h2 id="section-16">
+          <span class="section-num">16</span>16. Final Provisions and
+          Miscellaneous
+        </h2>
+        <h3>16.1 Entire Agreement</h3>
+
+        <p>
+          <strong
+            >These Terms and our Privacy Policy constitute the entire
+            agreement:</strong
+          >
+        </p>
+        <ul>
+          <li>This supersedes any previous agreements</li>
+          <li>No side agreements or verbal promises</li>
+          <li>The main agreement is: these Terms + Privacy Policy</li>
+          <li>Additional policies (Community Guidelines, etc.) also apply</li>
+          <li>
+            If conflict between documents: Privacy Policy &gt; These Terms &gt;
+            Other Policies
+          </li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          This document is the whole deal. If we promised something verbally
+          that's not in writing here, it doesn't count.
+        </p>
+
+        <h3>16.2 Severability</h3>
+
+        <p><strong>If any part of these Terms is found invalid:</strong></p>
+        <ul>
+          <li>That part is severed (removed)</li>
+          <li>The rest remains in effect</li>
+          <li>The invalid part won't affect other parts</li>
+        </ul>
+
+        <p>
+          <strong>Example:</strong> If a court says the arbitration clause is
+          invalid in the Philippines, we just remove that clause. The rest of
+          the Terms still apply.
+        </p>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          If a judge says one rule doesn't apply, the other rules still apply.
+        </p>
+
+        <h3>16.3 Waiver</h3>
+
+        <p>
+          <strong
+            >If we don't enforce a provision, it doesn't mean we've waived
+            it:</strong
+          >
+        </p>
+        <ul>
+          <li>We can still enforce it later</li>
+          <li>Not responding to a violation doesn't mean it's okay</li>
+          <li>We can choose when to enforce</li>
+        </ul>
+
+        <p>
+          <strong>Example:</strong> If we don't punish someone for spamming
+          once, we can still ban them the next time.
+        </p>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          Just because we didn't punish someone once doesn't mean we're okay
+          with rule-breaking. We can still enforce the rule later.
+        </p>
+
+        <h3>16.4 Interpretation</h3>
+
+        <p><strong>Key definitions:</strong></p>
+        <ul>
+          <li>"We," "us," "our," "Dayo" = Dayo, Inc.</li>
+          <li>"You," "your," "user" = the person using Dayo</li>
+          <li>"Service" = Dayo app and all features</li>
+          <li>"Terms" = this entire document</li>
+          <li>"Platform" = the Dayo app, website, servers, and services</li>
+          <li>
+            "Content" = any text, photos, videos, comments, posts you create
+          </li>
+          <li>"Coin" = Dayo Coins (virtual currency)</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          When we say "we," we mean Dayo. When we say "you," we mean you.
+        </p>
+
+        <h3>16.5 No Assignment by You</h3>
+
+        <p><strong>You may not:</strong></p>
+        <ul>
+          <li>❌ Transfer your account to someone else</li>
+          <li>❌ Assign these Terms to someone else</li>
+          <li>❌ Sell your account or coins</li>
+          <li>❌ Give your account to a friend or family member</li>
+        </ul>
+
+        <p><strong>Dayo may:</strong></p>
+        <ul>
+          <li>✅ Assign these Terms to a successor company</li>
+          <li>✅ Transfer rights if acquired or merged</li>
+          <li>✅ Share terms with partner companies (with notice)</li>
+        </ul>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          Your account is yours only. You can't give it to someone else. But if
+          Dayo gets bought by another company, that's okay—the new owners take
+          over.
+        </p>
+
+        <h3>16.6 Notices to You</h3>
+
+        <p><strong>We may notify you via:</strong></p>
+        <ul>
+          <li>✅ In-app notifications (pop-up, banner, etc.)</li>
+          <li>✅ Email to your registered email</li>
+          <li>✅ SMS (if you provided phone number)</li>
+          <li>✅ Notices posted in Settings or Help</li>
+          <li>✅ Social media direct message (if you follow us)</li>
+        </ul>
+
+        <p><strong>Notice is considered delivered when:</strong></p>
+        <ul>
+          <li>Posted in-app (immediately)</li>
+          <li>Emailed (within 24 hours)</li>
+          <li>SMS sent (within 24 hours)</li>
+        </ul>
+
+        <p><strong>You accept all forms of notice by using Dayo.</strong></p>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          We'll tell you about updates, policy changes, or account issues
+          through the app, email, or text. Check your email regularly.
+        </p>
+
+        <h3>16.7 Force Majeure</h3>
+
+        <p><strong>Dayo is not liable for failures caused by:</strong></p>
+        <ul>
+          <li>❌ Natural disasters (earthquakes, floods, typhoons)</li>
+          <li>❌ War, terrorism, or civil unrest</li>
+          <li>❌ Government actions or regulations</li>
+          <li>❌ Pandemics or epidemics</li>
+          <li>❌ Internet outages beyond our control</li>
+          <li>❌ Utility failures (power outages, etc.)</li>
+          <li>❌ Third-party hacks or attacks</li>
+        </ul>
+
+        <p>
+          <strong>What This Means:</strong> If the server goes down because of
+          an earthquake, that's not our fault. We're not liable for damages.
+        </p>
+
+        <p>
+          <strong>In Plain Language:</strong><br />
+          If something catastrophic happens that's beyond our control
+          (earthquake, war, pandemic, power outage), we're not responsible.
+        </p>
+
+        <hr />
+        <hr />
+        <h2>17. ACKNOWLEDGMENT OF TERMS</h2>
+
+        <p>
+          <strong
+            >By clicking "I Agree" or by using Dayo, you acknowledge and agree
+            that:</strong
+          >
+        </p>
+
+        <ul>
+          <li>✅ You have read these entire Terms of Service</li>
+          <li>✅ You understand and accept all provisions</li>
+          <li>
+            ✅ You are at least 13 years old (or have parental consent if 13-17)
+          </li>
+          <li>✅ You have authority to enter into this agreement</li>
+          <li>✅ You will comply with all laws and these Terms</li>
+          <li>✅ You are responsible for all your content and conduct</li>
+          <li>✅ You accept all limitations of liability and disclaimers</li>
+          <li>✅ You consent to jurisdiction in the Philippines</li>
+          <li>✅ You understand Dayo is provided "as-is" without warranties</li>
+        </ul>
+
+        <hr />
+
+        <h2>18. EFFECTIVE DATE &amp; UPDATES</h2>
+
+        <p>
+          <strong>Last Updated:</strong> April 26, 2026<br />
+          <strong>Effective Date:</strong> May 1, 2026<br />
+          <strong>Document Version:</strong> 2.0 (Comprehensive Edition)
+        </p>
+
+        <p>
+          All users of Dayo must accept these Terms of Service to access the
+          platform.
+        </p>
+
+        <p>
+          Check back regularly for updates. Major changes will be announced
+          in-app.
+        </p>
+
+        <hr />
+
+        <h2>19. CREDITS &amp; LEGAL COMPLIANCE</h2>
+
+        <p>
+          <strong>These Terms of Service were drafted to comply with:</strong>
+        </p>
+
+        <ul>
+          <li>✅ Google Play Store Policies</li>
+          <li>✅ Apple App Store Guidelines</li>
+          <li>✅ Republic Act 10173 (Data Privacy Act of 2012)</li>
+          <li>✅ Republic Act 10175 (Cybercrime Prevention Act of 2012)</li>
+          <li>✅ Republic Act 10627 (Anti-Bullying Act of 2013)</li>
+          <li>✅ Consumer Act of the Philippines</li>
+          <li>✅ Intellectual Property Code of the Philippines</li>
+          <li>✅ Alternative Dispute Resolution (ADR) Act of 2004</li>
+        </ul>
+
+        <p><strong>Questions or Concerns?</strong></p>
+
+        <p>
+          Email: dayo.ph.it.services@gmail.com<br />
+          Location: Butuan City, Agusan Del Norte, Philippines
+        </p>
+
+        <hr />
+
+        <p>
+          <strong>Dayo, Inc.</strong><br />
+          Sports Matching Application<br />
+          Republic of the Philippines
+        </p>
+
+        <p>
+          <strong>Version 2.0</strong> — Effective May 1, 2026<br />
+          © 2026 Dayo, Inc. All Rights Reserved.
+        </p>
+
+        <p>
+          <em
+            >For urgent legal matters or law enforcement requests, contact
+            dayo.ph.it.services@gmail.com with proof of legal authority.</em
+          >
+        </p>
+      </main>
+    </div>
+
     <footer>
-      <div class="footer-container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h4>Policies</h4>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="logo-row">
+            <img
+              src="assets/LogoBig.png"
+              alt="Dayo Logo"
+              style="width: 22px; height: 22px"
+            />
+            <span class="brand-name">Dayo.ph</span>
+          </div>
+          <p>
+            Sports networking for the Philippines. Connecting athletes, clubs,
+            and communities.
+          </p>
+        </div>
+        <div class="footer-nav">
+          <div class="footer-col">
+            <h4>Legal</h4>
             <ul>
-              <li><a href="terms.html">Terms of Service</a></li>
               <li><a href="privacy.html">Privacy Policy</a></li>
-              <li>
-                <a href="community-guidelines.html">Community Guidelines</a>
-              </li>
+              <li><a href="terms.html">Terms of Service</a></li>
+              <li><a href="guidelines.html">Community Guidelines</a></li>
             </ul>
           </div>
-          <div class="footer-section">
-            <h4>Billing & Payment</h4>
-            <ul>
-              <li><a href="refund-policy.html">Refund Policy</a></li>
-              <li><a href="payment-policy.html">Payment Policy</a></li>
-              <li>
-                <a href="virtual-currency-policy.html"
-                  >Virtual Currency Policy</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h4>User Management</h4>
-            <ul>
-              <li><a href="data-deletion.html">Data Deletion</a></li>
-              <li><a href="privacy.html">Your Privacy</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
+          <div class="footer-col">
             <h4>Contact</h4>
             <ul>
               <li>
-                <a href="mailto:support@yourapp.com">support@yourapp.com</a>
+                <a href="mailto:dayo.ph.it.services@gmail.com">Support Email</a>
               </li>
-              <li>Response time: 24-48 hours</li>
+              <li><a href="index.html">Legal Center</a></li>
             </ul>
           </div>
         </div>
-        <div class="footer-bottom">
-          <p>
-            &copy; 2024 YourApp. All rights reserved. | Last updated: April 2024
-          </p>
-        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 Dayo, Inc. · Butuan City, Agusan Del Norte, Philippines · All
+        rights reserved.
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+      // Reading progress bar
+      const bar = document.getElementById("progress");
+      function onScroll() {
+        const s = document.documentElement;
+        bar.style.width =
+          (s.scrollTop / (s.scrollHeight - s.clientHeight)) * 100 + "%";
+      }
+      window.addEventListener("scroll", onScroll, { passive: true });
+
+      // Sidebar active section highlight
+      const headings = document.querySelectorAll(".content h2[id]");
+      const tocLinks = document.querySelectorAll(".toc-link");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              tocLinks.forEach((a) =>
+                a.classList.toggle(
+                  "toc-active",
+                  a.getAttribute("href") === "#" + e.target.id,
+                ),
+              );
+            }
+          });
+        },
+        { rootMargin: "-15% 0px -75% 0px" },
+      );
+      headings.forEach((h) => observer.observe(h));
+    </script>
   </body>
+
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById("theme-toggle");
+    const htmlElement = document.documentElement;
+    const bodyElement = document.body;
+
+    // Initialize theme from localStorage
+    function initializeTheme() {
+      const savedTheme = localStorage.getItem("dayoTheme") || "dark";
+      if (savedTheme === "light") {
+        bodyElement.classList.add("light-theme");
+        themeToggle.textContent = "☀️";
+      } else {
+        bodyElement.classList.remove("light-theme");
+        themeToggle.textContent = "🌙";
+      }
+    }
+
+    themeToggle.addEventListener("click", () => {
+      bodyElement.classList.toggle("light-theme");
+      const isLight = bodyElement.classList.contains("light-theme");
+      localStorage.setItem("dayoTheme", isLight ? "light" : "dark");
+      themeToggle.textContent = isLight ? "☀️" : "🌙";
+    });
+
+    // Hamburger menu toggle
+    const menuToggle = document.getElementById("menu-toggle");
+    const nav = document.querySelector("nav");
+
+    menuToggle.addEventListener("click", () => {
+      menuToggle.classList.toggle("active");
+      nav.classList.toggle("active");
+    });
+
+    // Close menu when a link is clicked
+    const navLinks = document.querySelectorAll("nav a");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        menuToggle.classList.remove("active");
+        nav.classList.remove("active");
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest("header")) {
+        menuToggle.classList.remove("active");
+        nav.classList.remove("active");
+      }
+    });
+
+    // Reading progress bar
+    const bar = document.getElementById("progress");
+    function onScroll() {
+      const scrollHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = window.scrollY;
+      bar.style.width = (scrolled / scrollHeight) * 100 + "%";
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    // Sidebar active section highlight
+    const headings = document.querySelectorAll(".content h2[id]");
+    const tocLinks = document.querySelectorAll(".toc-link");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const id = entry.target.getAttribute("id");
+          const link = document.querySelector(`.toc-link[href="#${id}"]`);
+          if (link) {
+            document
+              .querySelectorAll(".toc-link")
+              .forEach((l) => l.classList.remove("toc-active"));
+            if (entry.isIntersecting) {
+              link.classList.add("toc-active");
+            }
+          }
+        });
+      },
+      { rootMargin: "-15% 0px -75% 0px" },
+    );
+    headings.forEach((h) => observer.observe(h));
+
+    // Initialize theme on page load
+    initializeTheme();
+  </script>
 </html>
