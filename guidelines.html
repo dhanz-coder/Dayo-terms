@@ -114,19 +114,19 @@
         flex-shrink: 0;
       }
       .header-logo img {
-        width: 52px;
-        height: 22px;
+        width: clamp(28px, 6vw, 52px);
+        height: clamp(12px, 2.5vw, 22px);
         display: block;
       }
       .header-logo .logo-mark {
-        width: 32px;
-        height: 32px;
+        width: clamp(28px, 6vw, 32px);
+        height: clamp(28px, 6vw, 32px);
         border-radius: 7px;
         background: var(--green);
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 0.8rem;
+        font-size: clamp(0.6rem, 1.5vw, 0.8rem);
         font-weight: 900;
         color: #000;
         letter-spacing: -0.5px;
@@ -782,12 +782,12 @@
           display: none;
         }
         .header-logo img {
-          width: 28px;
-          height: 28px;
+          width: 24px;
+          height: 24px;
         }
         .header-logo .logo-mark {
-          width: 28px;
-          height: 28px;
+          width: 24px;
+          height: 24px;
         }
       }
       @media (max-width: 540px) {
@@ -1166,12 +1166,62 @@
     </footer>
 
     <script>
+      // Theme toggle functionality
+      const themeToggle = document.getElementById("theme-toggle");
+      const bodyElement = document.body;
+
+      // Initialize theme from localStorage
+      function initializeTheme() {
+        const savedTheme = localStorage.getItem("dayoTheme") || "dark";
+        if (savedTheme === "light") {
+          bodyElement.classList.add("light-theme");
+          themeToggle.textContent = "☀️";
+        } else {
+          bodyElement.classList.remove("light-theme");
+          themeToggle.textContent = "🌙";
+        }
+      }
+
+      themeToggle.addEventListener("click", () => {
+        bodyElement.classList.toggle("light-theme");
+        const isLight = bodyElement.classList.contains("light-theme");
+        localStorage.setItem("dayoTheme", isLight ? "light" : "dark");
+        themeToggle.textContent = isLight ? "☀️" : "🌙";
+      });
+
+      // Hamburger menu toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const nav = document.querySelector("nav");
+
+      menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("active");
+        nav.classList.toggle("active");
+      });
+
+      // Close menu when a link is clicked
+      const navLinks = document.querySelectorAll("nav a");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          menuToggle.classList.remove("active");
+          nav.classList.remove("active");
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest("header")) {
+          menuToggle.classList.remove("active");
+          nav.classList.remove("active");
+        }
+      });
+
       // Reading progress bar
       const bar = document.getElementById("progress");
       function onScroll() {
-        const s = document.documentElement;
-        bar.style.width =
-          (s.scrollTop / (s.scrollHeight - s.clientHeight)) * 100 + "%";
+        const scrollHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = window.scrollY;
+        bar.style.width = (scrolled / scrollHeight) * 100 + "%";
       }
       window.addEventListener("scroll", onScroll, { passive: true });
 
@@ -1180,107 +1230,25 @@
       const tocLinks = document.querySelectorAll(".toc-link");
       const observer = new IntersectionObserver(
         (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              tocLinks.forEach((a) =>
-                a.classList.toggle(
-                  "toc-active",
-                  a.getAttribute("href") === "#" + e.target.id,
-                ),
-              );
+          entries.forEach((entry) => {
+            const id = entry.target.getAttribute("id");
+            const link = document.querySelector(`.toc-link[href="#${id}"]`);
+            if (link) {
+              document
+                .querySelectorAll(".toc-link")
+                .forEach((l) => l.classList.remove("toc-active"));
+              if (entry.isIntersecting) {
+                link.classList.add("toc-active");
+              }
             }
           });
         },
         { rootMargin: "-15% 0px -75% 0px" },
       );
       headings.forEach((h) => observer.observe(h));
+
+      // Initialize theme on page load
+      initializeTheme();
     </script>
   </body>
-
-  <script>
-    // Theme toggle functionality
-    const themeToggle = document.getElementById("theme-toggle");
-    const htmlElement = document.documentElement;
-    const bodyElement = document.body;
-
-    // Initialize theme from localStorage
-    function initializeTheme() {
-      const savedTheme = localStorage.getItem("dayoTheme") || "dark";
-      if (savedTheme === "light") {
-        bodyElement.classList.add("light-theme");
-        themeToggle.textContent = "☀️";
-      } else {
-        bodyElement.classList.remove("light-theme");
-        themeToggle.textContent = "🌙";
-      }
-    }
-
-    themeToggle.addEventListener("click", () => {
-      bodyElement.classList.toggle("light-theme");
-      const isLight = bodyElement.classList.contains("light-theme");
-      localStorage.setItem("dayoTheme", isLight ? "light" : "dark");
-      themeToggle.textContent = isLight ? "☀️" : "🌙";
-    });
-
-    // Hamburger menu toggle
-    const menuToggle = document.getElementById("menu-toggle");
-    const nav = document.querySelector("nav");
-
-    menuToggle.addEventListener("click", () => {
-      menuToggle.classList.toggle("active");
-      nav.classList.toggle("active");
-    });
-
-    // Close menu when a link is clicked
-    const navLinks = document.querySelectorAll("nav a");
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        menuToggle.classList.remove("active");
-        nav.classList.remove("active");
-      });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener("click", (e) => {
-      if (!e.target.closest("header")) {
-        menuToggle.classList.remove("active");
-        nav.classList.remove("active");
-      }
-    });
-
-    // Reading progress bar
-    const bar = document.getElementById("progress");
-    function onScroll() {
-      const scrollHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const scrolled = window.scrollY;
-      bar.style.width = (scrolled / scrollHeight) * 100 + "%";
-    }
-    window.addEventListener("scroll", onScroll, { passive: true });
-
-    // Sidebar active section highlight
-    const headings = document.querySelectorAll(".content h2[id]");
-    const tocLinks = document.querySelectorAll(".toc-link");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const id = entry.target.getAttribute("id");
-          const link = document.querySelector(`.toc-link[href="#${id}"]`);
-          if (link) {
-            document
-              .querySelectorAll(".toc-link")
-              .forEach((l) => l.classList.remove("toc-active"));
-            if (entry.isIntersecting) {
-              link.classList.add("toc-active");
-            }
-          }
-        });
-      },
-      { rootMargin: "-15% 0px -75% 0px" },
-    );
-    headings.forEach((h) => observer.observe(h));
-
-    // Initialize theme on page load
-    initializeTheme();
-  </script>
 </html>
